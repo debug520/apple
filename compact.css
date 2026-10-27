@@ -1,0 +1,46 @@
+.travelCompact .travelTabs{gap:7px;padding:2px 0 12px;margin-bottom:4px}
+.travelCompact .travelTabs button{padding:7px 14px;min-height:38px;font-size:13px}
+.travelCompact .section{margin:16px 0 10px}
+.travelCompact .panel{padding:16px 18px;border-radius:13px;margin:10px 0}
+.travelCompact .panel h2{font-size:17px}
+.travelCompact .tripDate{justify-content:flex-start;gap:18px;padding:10px 16px;font-size:13px}
+.travelCompact input[type="date"]{height:38px;width:168px;padding:6px 10px;font-size:13px}
+.travelCompact .chips{margin:10px 0}
+.travelCompact .step{padding:12px 14px;margin:8px 0;gap:10px;border-radius:12px}
+.travelCompact .step .formrow{margin:7px 0;gap:8px}
+.travelCompact .step input[type="time"],.travelCompact .step select{min-height:34px;max-width:112px;font-size:12px;padding:5px 8px}
+.travelCompact .step .controls{margin-top:7px;padding-top:3px}
+.travelCompact .step .controls button{min-height:36px}
+.travelCompact input[type="number"]{height:38px;padding:6px 9px}
+.compactRoutes .tripLeg{padding:10px 0;border-top:1px solid var(--line)}
+.compactRoutes>.row{padding-bottom:8px}
+.legHeading{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;font-weight:600;line-height:1.6}
+.legArrow{color:#9aa79e;padding:0 5px}
+.legDistance{font-weight:400;color:#708075;white-space:nowrap;font-size:12px}
+.legActions{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
+.legActions a.secondary{margin:0!important;min-height:32px;padding:5px 10px;font-size:12px;border-radius:8px}
+.routeHelp{margin-top:5px;color:#7b897f;font-size:11px}
+.routeHelp summary,.routeMore summary{cursor:pointer;min-height:28px;padding:4px 0}
+.routeHelp p{font-size:12px!important;margin:3px 0!important;line-height:1.6!important}
+.routeMore{font-size:12px;color:var(--blue)}
+.routeEmpty{font-size:13px!important;margin:5px 0!important}
+.travelCompact .introHeader{margin:12px 0 16px}
+.travelCompact .introHeader h1{font-size:28px}
+.travelCompact .introHeader p{font-size:13px;margin-top:4px}
+.travelCompact .dashboardGrid{gap:12px;margin:12px 0}
+.travelCompact .dashboardGrid>.panel{margin:0}
+.travelCompact .journeyFocus{padding:20px;border-radius:15px}
+.travelCompact .journeyFocus h2{font-size:24px;margin:10px 0}
+.travelCompact .journeyFocus>p{font-size:13px;line-height:1.65;margin:8px 0}
+.travelCompact .journeyFocus>.note{display:none}
+.travelCompact .dashboardProgress h2{font-size:30px;margin:10px 0 8px}
+.travelCompact .dashboardProgress progress{height:7px}
+.travelCompact .dashboardProgress p{font-size:12px;margin:8px 0}
+.travelCompact .moneyline{font-size:25px}
+.travelCompact .storyDaily{padding:18px 20px;border-radius:15px;margin:14px 0;gap:18px}
+.travelCompact .storyDaily h2{font-size:21px;margin:9px 0}
+.travelCompact .storyDaily p{font-size:13px;line-height:1.7}
+.travelCompact .storyNumber{font-size:48px}
+.travelCompact .dashboardTools button{padding:15px;border-radius:12px}
+@media(min-width:760px){.compactRoutes .tripLeg{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px}.legActions{margin-top:0}.travelCompact .dashboardGrid{grid-template-columns:1.5fr 1fr}}
+@media(max-width:600px){.travelCompact .panel{padding:14px}.travelCompact .introHeader h1{font-size:25px}.travelCompact .introHeader>.secondary{padding:6px 10px;min-height:36px;font-size:12px}.legHeading{align-items:flex-start}.travelCompact .tripDate{padding:9px 13px}.travelCompact .storyNumber{display:none}.travelCompact .step .controls button{min-height:40px}}

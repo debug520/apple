@@ -1,7 +1,7 @@
 set -eu
 mkdir -p dist
 for archive in assets-*.zip; do unzip -qo "$archive" -d dist; done
-cp expansion-ui.js catalog-ui.js dist/
+cp expansion-ui.js catalog-ui.js compact-ui.js compact.css dist/
 python3 fetch_photos.py
 python3 -m pip install --quiet --target .build-tools Pillow
 PYTHONPATH=.build-tools python3 compress_photos.py
@@ -12,6 +12,9 @@ p=Path('dist/travel.html')
 s=p.read_text().replace('<script src="app.js">','<script src="enriched-photos.js?v=20261027"></script><script src="app.js">')
 s=s.replace('</body>','<script src="expansion-ui.js"></script><script src="catalog-ui.js?v=20261027"></script></body>').replace('浏览十座城市','浏览二十座城市')
 s=s.replace('src="city-data.js"','src="city-data.js?v=20261027"')
+s=s.replace('</head>','<link rel="stylesheet" href="compact.css?v=20261027b"></head>').replace('</body>','<script src="compact-ui.js?v=20261027b"></script></body>')
+b=Path('dist/basic.js')
+b.write_text('\n'.join(line for line in b.read_text().splitlines() if not line.startswith('const basicMine=minePage;'))+'\n')
 p.write_text(s)
 Path('dist/index.html').write_text(s)
 Path('dist/travel').mkdir(exist_ok=True)
