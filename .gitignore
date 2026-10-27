@@ -1,0 +1,6 @@
+dist/
+catalog.json
+photo-research.json
+photo-download-report.json
+review-*.jpg
+upload-*.b64
