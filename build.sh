@@ -3,6 +3,8 @@ mkdir -p dist
 for archive in assets-*.zip; do unzip -qo "$archive" -d dist; done
 cp expansion-ui.js catalog-ui.js dist/
 python3 fetch_photos.py
+python3 -m pip install --quiet --target .build-tools Pillow
+PYTHONPATH=.build-tools python3 compress_photos.py
 python3 enrich.py
 python3 - <<'PY'
 from pathlib import Path
