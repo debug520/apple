@@ -60,7 +60,9 @@
   "南京欢乐谷": {
     "ticket": "官网全价票参考 ¥260；大学生票参考 ¥220，官网说明研究生、博士生不适用该大学生优惠。当前单园区或套餐票须另核对。",
     "priceCheckedAt": "2026-10-28",
-    "priceSource": "https://nj.happyvalley.cn/about/ticket.shtml"
+    "priceSource": "https://nj.happyvalley.cn/about/ticket.shtml",
+    "reservationStatus": "unknown",
+    "reservation": "南京已取消多数等级景区统一预约要求，但本项目当前具体票种、时段或活动的执行规则仍待核实；请向景区官方确认，不能仅凭全市措施判断免预约。"
   },
   "成都动物园": {
     "ticket": "成人门票¥20/人；儿童、老人及其他优待按官方入园须知办理。",
@@ -117,7 +119,11 @@
   "重庆欢乐谷": {
     "ticket": "两江新区2026服务目录列全日票普通日¥200、高峰日¥220；实际执行票价、夜场和活动以官方当天公告为准。",
     "priceCheckedAt": "2026-10-28",
-    "priceSource": "https://www.ljxq.gov.cn/jz/ljjd_504288/zwgk/zfxxgkml/jczwgk/ggwhfwly/ggfw/ggwlmulu/202603/t20260304_15491947.html"
+    "priceSource": "https://www.ljxq.gov.cn/jz/ljjd_504288/zwgk/zfxxgkml/jczwgk/ggwhfwly/ggfw/ggwlmulu/202603/t20260304_15491947.html",
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "七彩云南欢乐世界": {
     "ticket": "昆明官方旅游网站参考成人 ¥280—320；来源票档可能调整，勿作为当日保证售价。",
@@ -244,7 +250,10 @@
     "reservation": "官方指南说明金田路馆（历史民俗）免预约，入馆需安检；活动、讲座和其他馆址须分别看规则。",
     "policyCheckedAt": "2026-10-28",
     "policySource": "https://www.shenzhenmuseum.com/guide",
-    "hours": "通常周一闭馆，节假日安排另查；官网不同栏目开放起始时间不一致，出发前向馆方确认。"
+    "hours": "通常周一闭馆，节假日安排另查；官网不同栏目开放起始时间不一致，出发前向馆方确认。",
+    "ticket": "馆方参观须知明确实行免费参观；餐饮、文创及外部服务另计，不存在必须购买的普通入馆门票。",
+    "priceSource": "https://cdn1.shenzhenmuseum.com/myOrderNew",
+    "priceCheckedAt": "2026-10-28"
   },
   "广州动物园": {
     "ticket": "成人全票¥20，儿童、学生、老人符合条件优惠票¥10；广州动物园官方公告明确无捆绑加价门票。",
@@ -269,7 +278,9 @@
     "reservationStatus": "required",
     "reservation": "通过“洛阳白马寺”官方微信公众号实名分时段预约；寺方公告要求提前预约、按预约时间入寺，未授权第三方代售。",
     "policySource": "https://www.luoyangmudan.cn/t/953",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "verificationNote": "找到旅游网站参考价，但尚未取得景区当前完整公开价目表；保留票价待核实，不以第三方起价当作当前官方售价。",
+    "verificationCheckedAt": "2026-10-28"
   },
   "洛阳博物馆": {
     "ticket": "闭馆前常设展览免费¥0；当前全馆闭馆，恢复后的展览及票务须按最新公告核对。",
@@ -403,7 +414,10 @@
     "reservationStatus": "required",
     "reservation": "实行实名线上预约，含政策性免票、港澳台及外籍观众；通过官网或“秦始皇帝陵博物院”“兵马俑票务在线”官方渠道预订。",
     "policySource": "https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html?pubDate=20260324",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "成人票¥120，淡旺季同价；全日制本科及以下在读学生凭有效证件半价¥60，研究生不在该学生优惠范围。票含兵马俑与丽山园，讲解等服务另核对。",
+    "priceSource": "https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html",
+    "priceCheckedAt": "2026-10-28"
   },
   "西安碑林博物馆": {
     "reservationStatus": "required",
@@ -418,7 +432,10 @@
     "reservationStatus": "required",
     "reservation": "通过馆方官网、公众号或官方列明渠道实名预约，按预约时段、入口核验证件；错过时段可能无法入院。",
     "policySource": "https://www.xabwy.com/index.html",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "政府博物馆开放名录列为免费开放；基本参观不需购买普通门票，收费特展、讲解等服务需另核对，免费不等于免预约。",
+    "priceSource": "https://www.xa.gov.cn/gk/wtly/ssml/5da81bc9fd850838eff49c3b.html",
+    "priceCheckedAt": "2026-10-28"
   },
   "小雁塔": {
     "reservationStatus": "required",
@@ -458,7 +475,11 @@
   "南京城墙": {
     "ticket": "南京2026民生价格手册列政府指导最高价：神策门瓮城—太平门段¥30，富贵山—光华东街段¥5，东水关—集庆门段（含中华门）¥50。不同城段分别售票，优惠和联票按所选入口核对。",
     "priceSource": "https://fgw.nanjing.gov.cn/njsfzhggwyh/202601/P020260107586054627681.pdf",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "南京城墙保护管理中心通告（媒体转载）明确神策门—太平门、集庆门—东水关等城墙景区取消实名预约，收费段可现场购票；城墙博物馆、明故宫历史展陈馆及午朝门公园特殊时段属于例外，分别核对。",
+    "policySource": "https://finance.sina.com.cn/jjxw/2024-07-12/doc-inccwqxw7594278.shtml",
+    "policyCheckedAt": "2026-10-28"
   },
   "明孝陵": {
     "ticket": "成人门票参考¥70；属于政府指导最高价，优惠票、联票及活动价格按官方订单。",
@@ -468,12 +489,18 @@
   "栖霞山": {
     "ticket": "2026价格手册列政府指导最高价：平时¥50，红枫节期间¥80。红枫节日期及优惠以景区公告为准。",
     "priceSource": "https://fgw.nanjing.gov.cn/njsfzhggwyh/202601/P020260107586054627681.pdf",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "unknown",
+    "reservation": "南京已取消多数等级景区统一预约要求，但本项目当前具体票种、时段或活动的执行规则仍待核实；请向景区官方确认，不能仅凭全市措施判断免预约。"
   },
   "红山森林动物园": {
     "ticket": "2026价格手册列政府指导最高价¥70/人次。实际分门区、日期和优惠票价格以官方售票页为准，勿直接套用旧版¥40票价。",
     "priceSource": "https://fgw.nanjing.gov.cn/njsfzhggwyh/202601/P020260107586054627681.pdf",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "南京官方公告将本景区列为保留预约的热门场所；请通过本景区官方购票渠道选择日期/时段，持对应有效证件入园。普通票、优惠票与年卡规则分别核对。",
+    "policySource": "https://www.nanjing.gov.cn/njxx/202407/t20240704_4706024.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "六朝博物馆": {
     "ticket": "2026价格手册列政府指导最高价¥30/人次；优惠及临展票务另核对。",
@@ -488,7 +515,9 @@
   "瞻园": {
     "ticket": "日间门票政府指导最高价¥30/人次；夜间演出、联票属于其他产品，另行核对。",
     "priceSource": "https://fgw.nanjing.gov.cn/njsfzhggwyh/202601/P020260107586054627681.pdf",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "unknown",
+    "reservation": "南京已取消多数等级景区统一预约要求，但本项目当前具体票种、时段或活动的执行规则仍待核实；请向景区官方确认，不能仅凭全市措施判断免预约。"
   },
   "夫子庙": {
     "ticket": "公共街区与内部场馆分开计费。2026价格手册列：大成殿最高¥30（春节灯会白天¥35、晚上¥50），中国科举博物馆+江南贡院南苑最高¥50。游船、演出另购。",
@@ -529,7 +558,11 @@
   "牛首山": {
     "ticket": "成人全价¥160，符合条件者半价¥80。全日制本科及以下学生适用学生优惠，研究生、博士生不在该学生票范围内。",
     "priceSource": "https://www.niushoushan.net/piaowuzhengce/2176.html",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "南京官方公告将本景区列为保留预约的热门场所；请通过本景区官方购票渠道选择日期/时段，持对应有效证件入园。普通票、优惠票与年卡规则分别核对。",
+    "policySource": "https://www.nanjing.gov.cn/njxx/202407/t20240704_4706024.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "灵隐寺": {
     "ticket": "自2025年12月1日起，灵隐飞来峰景区（含灵隐寺、永福寺、韬光寺）门票免费¥0；付费讲解等服务另计。",
@@ -570,16 +603,22 @@
     "policyCheckedAt": "2026-10-28"
   },
   "成都博物馆": {
-    "reservationStatus": "required",
-    "reservation": "通过唯一官方预约平台“成都博物馆票务系统”微信小程序预约，按时段参观。馆方未授权第三方销售预约门票及相关产品。",
-    "policySource": "https://cdmuseum.com/gonggao/202408/3727.html",
-    "policyCheckedAt": "2026-10-28"
+    "reservationStatus": "conditional",
+    "reservation": "普通参观通过“成都博物馆”官方微信公众号提前实名预约，可提前14天办理；馆方未授权第三方销售预约门票。部分收费特展票已含入馆权益时不需重复预约，按具体展览条款。",
+    "policySource": "https://www.cdmuseum.com/bixuan/202507/4050.html",
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "基本参观免费；收费特展及服务另计，应以当期展览购票须知为准。不要将“特展票含入馆”误解为所有展览免费。",
+    "priceSource": "https://www.scc.org.cn/centredetail.fds?id=278",
+    "priceCheckedAt": "2026-10-28"
   },
   "成都大熊猫繁育研究基地": {
-    "reservationStatus": "required",
-    "reservation": "一般游客须线上实名预约并持预约证件原件入园；60周岁及以上老人、6周岁或1.3米以下儿童可按官方规定免预约凭证入园。请勿将熊猫谷票与成都基地票混用。",
+    "reservationStatus": "conditional",
+    "reservation": "一般游客须线上实名分时预约，可提前14日预订；60周岁及以上老人、6周岁或身高1.3米以下儿童可凭有效证件免预约。按所选上/下午时段携带预约证件原件入园。",
     "policySource": "https://www.panda.org.cn/yd/service/ticket/",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "成都基地成人门票¥55；票按预约日期和上/下午时段入园一次。观光车、餐饮等另计；不要与都江堰熊猫谷混淆。",
+    "priceSource": "https://www.panda.org.cn/yd/service/ticket/",
+    "priceCheckedAt": "2026-10-28"
   },
   "金沙遗址博物馆": {
     "ticket": "闭馆前普通门票参考¥70/人次；当前闭馆不售正常参观票，重开票价尚未核实，不按旧价推定。",
@@ -617,7 +656,10 @@
     "reservationStatus": "conditional",
     "reservation": "本馆实行分时全预约，可提前7天（含当天）在官方渠道预约；西馆、民俗馆、古籍图书馆免预约排队入馆。请先确认参观馆区。",
     "policySource": "https://www.suzhou.gov.cn/szsrmzf/mszx/202604/3c3c5288f66d4d91859d80abe1d6e30e.shtml",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "本馆基本参观免费；西馆亦免费。研学活动、收费特展或另购服务应看具体公告；免费不等于本馆免预约。",
+    "priceSource": "https://visitsz.wglj.suzhou.com.cn/venue-detail.aspx?Id=37",
+    "priceCheckedAt": "2026-10-28"
   },
   "平江路": {
     "ticket": "公共街区免费¥0；游船、展馆、评弹及消费另计。",
@@ -704,7 +746,11 @@
   "洪崖洞": {
     "ticket": "景区公共游览免费¥0；内部商业体验和消费不属于免费范围。",
     "priceSource": "https://wap.cq.gov.cn/ywdt/bmts/202306/t20230621_12086859.html",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "龙亭公园": {
     "ticket": "景区官网票务指南列全票¥45、半价¥22；菊花文化节等活动是否调整须按当期公告确认。",
@@ -714,17 +760,29 @@
   "越秀公园": {
     "ticket": "日常公园门票免费¥0；展览、游乐及特殊活动另计。",
     "priceSource": "https://www.yuexiu.gov.cn/zjyx/yxjd/csgy/content/post_8664487.html",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "按广州取消多数A级景区统一实名预约的公告，日常散客免预约；园内展馆、活动、团队及高峰期措施以各自公告为准。",
+    "policySource": "https://wglj.gz.gov.cn/gkmlpt/content/9/9745/post_9745721.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "白云山": {
     "ticket": "进山次票¥5；摩星岭、索道、观光车等不一定包含，需分别核对。",
     "priceSource": "https://www.baiyunshan.com.cn/bys/jqzn/jqzn.shtml",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "conditional",
+    "reservation": "一般日间游览按广州措施免统一实名预约；摩星岭每日20:00至次日8:00仍在保留预约范围。门票、索道、观光车和团队规则另核对。",
+    "policySource": "https://wglj.gz.gov.cn/gkmlpt/content/9/9745/post_9745721.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "南越王博物院王墓展区": {
     "ticket": "王墓展区全票¥10、半票¥5，门票不含南越文王墓墓室下层参观；王宫展区免费，勿混淆两展区。",
     "priceSource": "https://www.nywmuseum.org.cn/News/Details/tzgg?nid=12532",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "广州官方措施将本场所列为仍保留实名预约的热门景区；通过场所官方平台按日期/时段预约购票，持对应证件入场。优惠票、免票及各馆区规则分别核对。",
+    "policySource": "https://wglj.gz.gov.cn/gkmlpt/content/9/9745/post_9745721.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "仙湖植物园": {
     "ticket": "成人票¥15，法定节假日¥10；官网列部分早晚时段免费开放，具体能否入园及寺庙开放另核对。",
@@ -737,13 +795,16 @@
   },
   "黄鹤楼": {
     "reservationStatus": "not-required",
-    "reservation": "黄鹤楼公园自2024年7月11日起实行免实名、免预约购票，可随时购票入园，客流达到承载量时按现场管控。夜游、演出产品另核对。",
+    "reservation": "武汉市政府发布：普通公园游览已取消实名预约，可线上或线下随时购票入园；半票与免票者须出示优免证件。高峰期达到承载量会暂停入园，夜游演出另按订单。",
     "policySource": "https://www.wuhan.gov.cn/sy/whyw/202407/t20240711_2427365.shtml",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "武汉市发改委2026政府定价清单列普通门票¥70/人；“夜上黄鹤楼”等演出另售，日场票不能当作夜场通票。",
+    "priceSource": "https://fgw.wuhan.gov.cn/zfxxgk/zfxxgk_4/sysf/202604/t20260427_2757794.html",
+    "priceCheckedAt": "2026-10-28"
   },
   "东湖听涛景区": {
-    "ticket": "听涛公共景区免费¥0，独立展馆、游船及游乐另计。",
-    "priceSource": "https://www.whdonghu.gov.cn/ztzl_6323/wlzl/202601/t20260122_2716447.shtml",
+    "ticket": "武汉市发改委2026政府定价清单列免费；东湖不同片区、游船、索道、展馆及活动分别核对，听涛免费不能外推为所有东湖项目免费。",
+    "priceSource": "https://fgw.wuhan.gov.cn/zfxxgk/zfxxgk_4/sysf/202604/t20260427_2757794.html",
     "priceCheckedAt": "2026-10-28"
   },
   "晴川阁": {
@@ -794,9 +855,13 @@
   },
   "崂山太清游览区": {
     "reservationStatus": "required",
-    "reservation": "崂山景区实行实名网上预约购票，提前7天开放；请选对太清线路、游览日期及检票入口。",
-    "policySource": "https://www.qdlaoshan.cn/New-News-info-nid-6285.html",
-    "policyCheckedAt": "2026-10-28"
+    "reservation": "官网2026旺季通告要求实名网上预约购票，预约通道提前7天开启；通过“崂山风景区”等官方公众号选择游览区及日期。达到承载量无票可约，改期须按原渠道退票后重新预约。",
+    "policySource": "https://qdlaoshan.cn/News-info-nid-6295.html",
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "南线（流清—太清等）门票旺季4—12月¥90、淡季1—3月¥60；观光车¥60另计，门票+车参考¥150/¥120，2日内有效。太清宫另票¥27，索道另购；勿将太清游览区与太清宫单票混淆。",
+    "priceSource": "https://www.qdlaoshan.cn/News-info-nid-2047.html",
+    "priceCheckedAt": "2026-10-28",
+    "extra": "南线门票与观光车合计旺季参考¥150、淡季¥120；太清宫、索道另计。不同线路通票、有效期和优惠适用范围应分别核对。"
   },
   "青岛方特梦幻王国": {
     "ticket": "官网列标准票¥280，小童/老人票¥200；适用年龄身高、夜场和活动优惠以官方订单。",
@@ -844,7 +909,11 @@
   "十八梯": {
     "ticket": "公共游览区域免费¥0；轨道交通、室内场馆、演出和消费另计。",
     "priceSource": "https://cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/ggwh/ly/zxdt/202408/t20240826_13556747.html",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "趵突泉": {
     "ticket": "成人门票¥40，学生/儿童符合条件票¥20；夜间活动和优惠以当期官方公告、订单为准。",
@@ -890,7 +959,11 @@
   "南锣鼓巷": {
     "ticket": "公共街区免门票¥0；内部独立场馆及消费另计。",
     "priceSource": "https://www.visitbeijing.com.cn/article/47QkViBYPUp",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "北京旅游网明确公共胡同为开放式街区，可自由进入，无需预约、无需门票；胡同内独立展馆、店铺和活动规则另核对。",
+    "policySource": "https://www.visitbeijing.com.cn/article/4GH4I1vTw4X",
+    "policyCheckedAt": "2026-10-28"
   },
   "前门大街": {
     "ticket": "公共步行街免费¥0；周边独立展馆、观光车与消费另计，勿将正阳门箭楼预约等同于整条大街预约。",
@@ -900,13 +973,20 @@
   "圆明园": {
     "ticket": "官网大门票成人¥10、半价¥5；西洋楼遗址、展馆、联票等是否包含请看所购票种。",
     "priceSource": "https://www.yuanmingyuanpark.cn/",
-    "priceCheckedAt": "2026-10-28"
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "按北京市取消多数旅游景区预约的措施，日常散客可现场购票或在线提前购票；收费区仍需购票，活动、团队及临时限流另按公园公告。",
+    "policySource": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202406/t20240623_3723929.html",
+    "policyCheckedAt": "2026-10-28"
   },
   "恭王府": {
     "reservationStatus": "required",
     "reservation": "通过恭王府博物馆购票网站或官方微信公众号“巡·恭博”栏目预约购票；按所选时段和证件入馆。",
     "policySource": "https://www.pgm.org.cn/pgm/zxly/gzly.shtml",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "普通门票¥40/人；全日制本科及以下学生等符合条件者半价，优惠凭有效证件核验。讲解等额外服务另核对。",
+    "priceSource": "https://www.pgm.org.cn/pgm/pwfw/202307/3cbdbeee2c9d4c6584c6a8afbab7b21a.shtml",
+    "priceCheckedAt": "2026-10-28"
   },
   "798艺术区": {
     "reservationStatus": "not-required",
@@ -952,21 +1032,31 @@
     "policyCheckedAt": "2026-10-28"
   },
   "云南省博物馆": {
-    "ticket": "基本参观免费¥0；收费临展、体验及讲解服务另看官方公告，不要购买所谓含入馆的代预约产品。",
-    "priceSource": "https://chinakunming.travel/html/180827/1056.html",
-    "priceCheckedAt": "2026-10-28"
+    "ticket": "普通入馆全程免费；官方声明明确不存在第三方可售的普通入馆门票，讲解、文创等服务另核对。",
+    "priceSource": "https://www.yn12377.cn/c/2025-07-29/673726.shtml",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "省互联网违法和不良信息举报中心转载馆方声明：通过支付宝“云南省博物馆”或微信“数字云博”小程序实名免费预约；未授权第三方开展预约售票，不需为普通入馆支付门票费用。",
+    "policySource": "https://www.yn12377.cn/c/2025-07-29/673726.shtml",
+    "policyCheckedAt": "2026-10-28"
   },
   "天津之眼": {
     "reservationStatus": "required",
     "reservation": "属于天津保留预约或错峰预约的热点景区，请在“天津之眼”官方渠道选日期时段，并关注天气停运通知。",
     "policySource": "https://whly.tj.gov.cn/TJSWHHLYJ/gabsycs/gzdtgh/202407/t20240728_6685767.html",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "运营方2026调价公告（北方网转载）：4月20日起成人日间普票¥90、夜间普票¥138；日间售票适用至17:30，最晚18:00登舱，夜间自18:00起。儿童、65周岁及以上老人符合条件可享对应时段半价；包舱等其他产品另核价。",
+    "priceSource": "https://news.enorth.com.cn/system/2026/04/17/059327095.shtml",
+    "priceCheckedAt": "2026-10-28"
   },
   "天津古文化街": {
     "reservationStatus": "not-required",
     "reservation": "天津文旅部门将古文化街列入散客免预约景区；团体、活动及街内独立场馆另核对，免预约不代表所有项目免费。",
     "policySource": "https://whly.tj.gov.cn/TJSWHHLYJ/gabsycs/gzdtgh/202407/t20240728_6685767.html",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "北京旅游网景区资料列街区免费；天后宫等独立场馆、演出及购物餐饮不自动免费，各自核对收费。",
+    "priceSource": "https://s.visitbeijing.com.cn/attraction/118514",
+    "priceCheckedAt": "2026-10-28"
   },
   "瓷房子": {
     "reservationStatus": "conditional",
@@ -978,19 +1068,28 @@
     "reservationStatus": "required",
     "reservation": "属于苏州保留实名预约购票的重点景区；请通过官方渠道选日期/时段并携带对应证件。日常票、夜游和活动票须分别确认。",
     "policySource": "https://www.suzhou.gov.cn/szsrmzf/szyw/202406/40f954ccaae94c33b74a5a4aa08bf968.shtml",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "苏州文旅2026活动资料列古镇日常景点联票¥100，含退思园、珍珠塔等所列景点；退思园夜花园为另售产品，活动适用日另看公告。不是街区任何时段、全部项目通用票。",
+    "priceSource": "https://visitsz.wglj.suzhou.com.cn/festival-detail.aspx?id=2026042810273501",
+    "priceCheckedAt": "2026-10-28"
   },
   "寒山寺": {
     "reservationStatus": "not-required",
     "reservation": "按苏州取消大多数景区、文化场馆和宗教场所实名预约的公告，日常散客免预约；收费项目仍需买票，夜游、活动和高峰期管控另核对。",
     "policySource": "https://www.suzhou.gov.cn/szsrmzf/szyw/202406/40f954ccaae94c33b74a5a4aa08bf968.shtml",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "苏州市民价格手册列门票上限¥20/人次；优惠、钟声活动与特殊产品另核对。此为普通入场价格参考，不代表所有附加体验免费。",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc",
+    "priceCheckedAt": "2026-10-28"
   },
   "盘门": {
     "reservationStatus": "not-required",
     "reservation": "按苏州取消大多数景区、文化场馆和宗教场所实名预约的公告，日常散客免预约；收费项目仍需买票，夜游、活动和高峰期管控另核对。",
     "policySource": "https://www.suzhou.gov.cn/szsrmzf/szyw/202406/40f954ccaae94c33b74a5a4aa08bf968.shtml",
-    "policyCheckedAt": "2026-10-28"
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "普通日游票政府价格手册列上限¥40；瑞光塔等独立项目及夜游另核对。不要将暑期夜游活动价作为全年日游票价。",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc",
+    "priceCheckedAt": "2026-10-28"
   },
   "青岛啤酒博物馆": {
     "reservationStatus": "not-required",
@@ -1014,5 +1113,342 @@
     "ticket": "官网2026年10月票价表列单人全价¥230，青少年学生票¥190、儿童票¥120、长者票¥80。学生票不含研究生、博士生；下午场、优惠及生日票按各自条件。",
     "priceSource": "https://cd.happyvalley.cn/ticket.aspx?t=75",
     "priceCheckedAt": "2026-10-28"
+  },
+  "上海博物馆": {
+    "ticket": "须分馆区：东馆常设展免费，收费特展另购票；人民广场馆在2026-07-09至2027-11-14美洲古代文明大展期间须购票，当前特展具体票档仍待核实，不可按免费入馆规划。",
+    "priceSource": "https://reservation.shanghaimuseum.net/",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "conditional",
+    "reservation": "东馆日常散客免预约，持有效证件原件安检入馆；古代文明探索宫、数字馆需专项预约。人民广场馆美洲古代文明大展期间通过官方小程序预约购票；团队规则另行办理。先确认馆区与展览。",
+    "policySource": "https://reservation.shanghaimuseum.net/",
+    "policyCheckedAt": "2026-10-28",
+    "hours": "人民广场馆9:00—17:00，15:00后停止入场，通常周一闭馆；东馆10:00—18:00，17:00后停止入场，通常周二闭馆。国定节假日、夜场以馆方公告为准。"
+  },
+  "二里头夏都遗址博物馆": {
+    "ticket": "官网明确携身份证可免费参观；另行报名活动或讲解服务的收费情况须单独核对。",
+    "priceSource": "https://eltxdmuseum.com/serve/0",
+    "priceCheckedAt": "2026-10-28",
+    "hours": "通常周二至周日9:00—17:00，16:30停止入馆；法定节假日、牡丹文化节以最新公告为准。"
+  },
+  "雍和宫": {
+    "ticket": "普通门票¥25、半价票¥12；官网学生半票限全日制本科及以下，不含研究生等。优待资格和现场票务方式按官方当前规则。",
+    "priceSource": "https://s.visitbeijing.com.cn/attraction/117887",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "西安城墙": {
+    "ticket": "政府公布执行全票¥54、半票¥27/人次；骑行租车、演出、特殊活动及其他服务不自动包含在普通门票内。",
+    "priceSource": "https://qjxq.xa.gov.cn/zwgk/ndzdxxgk/jytabl/1958091978013503489.html",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "大足石刻": {
+    "ticket": "宝顶山（含圣寿寺）旺季¥115/淡季¥100；北山旺季¥70/淡季¥50；两景区联票旺季¥140/淡季¥120。旺季3—11月，淡季12月至次年2月。交通车往返¥22/单程¥12、数字电影¥80另计。",
+    "priceSource": "https://www.dzskyjy.cn/web/column/col5008928.html",
+    "priceCheckedAt": "2026-10-28",
+    "extra": "门票、宝顶山景区交通车、数字电影是不同收费项目；半价/免票政策不自动适用于交通车或数字电影。按订单核对包含范围。",
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "长江索道": {
+    "ticket": "2025-01-01起政府指导最高限价：单程¥30、往返¥50/人；运营方可在此范围内确定执行票价。此为最高限价，非承诺当日售价；以官方购票订单为准。",
+    "priceSource": "https://fzggw.cq.gov.cn/zwgk/zfxxgkml/jgxx/jgzc/202503/t20250324_14434363.html",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "重庆官方公告将长江索道列为仍需预约的景区；通过官方渠道按日期及票种购票，核对取号候乘、有效时段和乘坐方向。预约购票不代表到场即乘。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "重庆动物园": {
+    "ticket": "官方公布旺季1—11月¥25、淡季12月¥20/人；优惠及免票按有效证件核验。园内经营性项目、交通和消费另看公示。",
+    "priceSource": "https://english.cq.gov.cn/specials/Enjoy/Zoos/202608/t20260810_15912219.html",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "良渚古城遗址": {
+    "ticket": "遗址公园全价参访票¥60、半价¥30；符合资格者有免费票，须按官方证件条件核验。园内交通、活动等是否包含应单独看订单；不是良渚博物院门票。",
+    "priceSource": "https://www.liangzhusite.com/Web/Visit/59",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "遗址公园官网明确实名预约、每日限量；在官方预约渠道选日期并填写本人有效证件。优惠及免费资格也需按产品办理，不要与良渚博物院混淆。",
+    "policySource": "https://www.liangzhusite.com/Web/Visit/59",
+    "policyCheckedAt": "2026-10-28",
+    "hours": "遗址公园9:00—17:00，16:00停止入园；恶劣天气与临时调整以官方公告为准。"
+  },
+  "玄武湖": {
+    "reservationStatus": "not-required",
+    "reservation": "南京市政府报道明确玄武湖已取消实名预约，可直接入园；遇重大节假日或活动需要，公园可能另行公告预约或限流。游船、观光车等消费另核对。",
+    "policySource": "https://www.nanjing.gov.cn/zzb/ywdt/bmdt_72661/202407/t20240705_4707713.html",
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "景区免门票；游船、观光车、展览或经营性项目可能另收费，免费范围不是全部游玩消费。",
+    "priceSource": "https://www.xuanwuhu.net/index.aspx",
+    "priceCheckedAt": "2026-10-28",
+    "hours": "环湖路区域全年24小时开放；五洲及情侣园4—10月6:00—22:00、11月至次年3月6:00—21:00，临时管控以公告为准。"
+  },
+  "老门东": {
+    "reservationStatus": "unknown",
+    "reservation": "南京已取消多数等级景区统一预约要求，但本项目当前具体票种、时段或活动的执行规则仍待核实；请向景区官方确认，不能仅凭全市措施判断免预约。"
+  },
+  "磁器口古镇": {
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "武隆天生三桥": {
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "乐和乐都动物主题乐园": {
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "湖广会馆": {
+    "reservationStatus": "not-required",
+    "reservation": "按重庆取消多数A级景区预约的公告，日常散客免预约，可在承载量允许时现场入园或购票；收费项目仍须买票。团队、演出和独立体验、高峰期临时管控另核对。",
+    "policySource": "https://www.cq.gov.cn/ywdt/bmts/202407/t20240726_13434309.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "广州塔": {
+    "reservationStatus": "required",
+    "reservation": "广州官方措施将本场所列为仍保留实名预约的热门景区；通过场所官方平台按日期/时段预约购票，持对应证件入场。优惠票、免票及各馆区规则分别核对。",
+    "policySource": "https://wglj.gz.gov.cn/gkmlpt/content/9/9745/post_9745721.html",
+    "policyCheckedAt": "2026-10-28",
+    "verificationNote": "官方购票指引当前未能完整读取；不同高度、游乐体验和套票分别定价，基础票金额及票内范围继续待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "陈家祠": {
+    "reservationStatus": "required",
+    "reservation": "广州官方措施将本场所列为仍保留实名预约的热门景区；通过场所官方平台按日期/时段预约购票，持对应证件入场。优惠票、免票及各馆区规则分别核对。",
+    "policySource": "https://wglj.gz.gov.cn/gkmlpt/content/9/9745/post_9745721.html",
+    "policyCheckedAt": "2026-10-28",
+    "ticket": "广州市文旅局收费景区表列普通门票¥10；优惠及免票凭证另按馆方当前细则办理，讲解、文创等费用另计。",
+    "priceSource": "https://wglj.gz.gov.cn/mdjl/cjwt/jdjq/content/post_9208560.html",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "山东博物馆": {
+    "ticket": "免费参观。馆方2026-08声明经齐鲁网转载，明确没有授权第三方销售入馆门票或代预约；讲解等服务与免费入馆分开核对。",
+    "priceSource": "https://sdxw.iqilu.com/share/YS0yMS0xNzM0NTYwOQ.html",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "馆方2026-08声明（齐鲁网转载）明确实行实名预约、免费参观；唯一官方预约渠道为“山东博物馆”微信小程序，勿购买第三方所谓门票或代预约。",
+    "policySource": "https://sdxw.iqilu.com/share/YS0yMS0xNzM0NTYwOQ.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "湖南博物院": {
+    "reservationStatus": "required",
+    "reservation": "馆方2026-07-27调整公告经湖南日报转载：散客及旅行社团队预约周期改为提前5天（不含当天），通过官方微信公众号、支付宝小程序分时预约，持预约时有效证件原件入馆。特殊人群通道及具体展览资格另核对。",
+    "policySource": "https://m.voc.com.cn/xhn/news/202608/33364970.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "上海欢乐谷": {
+    "ticket": "上海文旅部门2026年5月活动页所列成人原价¥260、儿童/老人¥180、青少年¥230，作为常规票参考；该次¥130活动已结束，不能用于当前购票。日期票、夜场和附加体验按订单。",
+    "priceSource": "https://cmp.whlyj.sh.gov.cn/CMP/news_view.ac?id=b02d8bc0f56d4f15827bd50b87989437",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "天津欢乐谷": {
+    "ticket": "官网当前成人全日票¥230，产品适用2026-07-01至11-15内指定出行日期、当日单次入园；儿童/长者全天票参考¥170。夜场、特殊日期及附加体验另按具体产品，不保证其他日期同价。",
+    "priceSource": "https://tj.happyvalley.cn/cardlist.aspx?_d_id=5b332d8c0716c41237094a2693e655&t=21",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "conditional",
+    "reservation": "官网全日票为购买时指定日期的票，入园当日单次有效，出园后再次入园需另购票；提前购票、特定日优惠、年卡或兑换券是否另需预约，须按本人产品条款办理。",
+    "policySource": "https://tj.happyvalley.cn/cardlist.aspx?_d_id=5b332d8c0716c41237094a2693e655&t=21",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "鼓浪屿": {
+    "ticket": "上岛交通与岛内景点分开付费。厦门轮渡游客航线普通客船¥35、豪华客船¥80，均赠送20天内有效返程；不同航线、航班及岛内景点票不互相替代。岛内各收费景点价格仍需单独核对。",
+    "priceSource": "https://www.xmferry.com/xwzx/zxgg/30544.htm",
+    "priceCheckedAt": "2026-10-28",
+    "extra": "船票不等于日光岩、菽庄花园等岛内景点联票；按出发码头、目的码头、普通/豪华航班及返程有效期核对。",
+    "reservationStatus": "conditional",
+    "reservation": "厦鼓游客航线船票提前10天线上预售，可通过厦门轮渡官网、“屿见厦门”微信或支付宝小程序选日期航班购票。船票与岛内场馆预约分别办理；本条不能理解为购买船票即可进入全部收费景点。",
+    "policySource": "https://www.xmferry.com/xwzx/zxgg/30544.htm",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "翠湖公园": {
+    "ticket": "云南省民宗委官方资料明确为免费开放公园；游船、游乐和其他经营性项目不自动免费，按现场公示。",
+    "priceSource": "https://mzzj.yn.gov.cn/html/2024/difangdongtai_0326/53256.html",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "王城公园": {
+    "ticket": "洛龙区委网信办2026-04-24官方发布：4月23日起公园公共区域恢复免费，不含仍收费的动物园。牡丹文化节、动物园及游乐项目应另看当期票价，不把节会票套用于全年。",
+    "priceSource": "https://m.thepaper.cn/newsDetail_forward_33049013",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "洛龙区委网信办官方发布明确：2026-04-23起王城公园（不含动物园）无需购票、无需预约直接入园。动物园、节会活动和独立项目另核对。",
+    "policySource": "https://m.thepaper.cn/newsDetail_forward_33049013",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "隋唐城遗址植物园": {
+    "ticket": "洛龙区委网信办官方发布：2026-04-23起恢复免费开放；牡丹花会等特殊经营期可能单独定价，2026年4月中旬优惠价不应作为全年票价。",
+    "priceSource": "https://m.thepaper.cn/newsDetail_forward_33049013",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "黄河楼": {
+    "ticket": "国航与景区2026合作页面列登楼门票市场价¥30；至2026-12-31，符合该活动条件并持指定凭证者可购¥24优惠票。光影秀等独立演出不自动包含，价格另核对。",
+    "priceSource": "https://webresource.airchina.com.cn/zh-CN/content/c/2026-07-27/30010.shtml",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "清明上河园": {
+    "ticket": "园方官方商城列普通成人门票¥120；《大宋·东京梦华》等演出票为不同产品，是否含白天入园、有效期与再入园次数按所购订单，勿把普通门票视作含所有演出。",
+    "priceSource": "https://2023.qmsyun.com/shop.php",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "岳麓山": {
+    "ticket": "岳麓山·橘子洲旅游区2026官方发布（长沙发布/新湖南转载）明确预约后免费入园；岳麓书院、观光车及其他独立收费项目不包含，需另核对。",
+    "priceSource": "https://www.hunantoday.cn/news/xhn/202603/31753750.html",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "景区2026官方发布明确“请先预约，免费入园”，通过“岳麓山 橘子洲旅游区”官方服务号实名预约，勿购买代约或所谓内部票。",
+    "policySource": "https://www.hunantoday.cn/news/xhn/202603/31753750.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "天心阁": {
+    "ticket": "湖南省发改委2025政府管价景区目录列¥30/人次，作为普通门票价格参考；夜游、演艺及套票不自动适用该金额，按当前产品核价。",
+    "priceSource": "https://fgw.hunan.gov.cn/fgw/jgzc11/202507/t20250724_33748635.html",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "conditional",
+    "reservation": "文旅长沙2025官方渠道汇总（湖南日报转载）给出的购票入口为“夜游天心阁”微信公众号，可随约随用。普通日场、夜游与活动请按所购产品确认日期、时段及入场凭证，勿将夜场规则套给所有产品。",
+    "policySource": "https://www.hunantoday.cn/news/xhn/202508/30151742.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "杜甫江阁": {
+    "reservationStatus": "required",
+    "reservation": "文旅长沙官方渠道汇总（湖南日报转载）提示，可提前7天在“杜甫江阁 城发文旅”微信公众号购票预约；按选定日期与场次入场，优惠票证件和临时调整再核对。",
+    "policySource": "https://www.hunantoday.cn/news/xhn/202508/30151742.html",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "杜甫草堂": {
+    "ticket": "馆方公布全票¥50、半票¥25/人次，年票¥100/人/年。全日制本科及以下学生可凭有效学生证享半价；讲解、文创与其他经营性项目另核对。",
+    "priceSource": "https://www.cddfct.cn/go-c20.htm",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "石林风景区": {
+    "ticket": "中国日报公共服务信息平台2026景区资料列成人门票参考¥130；观光车、讲解等服务另核对，不包含全部园内消费。",
+    "priceSource": "https://www.chinaservicesinfo.com/s/202601/15/WS69689105498e23165e06ccad/stone-forest-kunming.html",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "not-required",
+    "reservation": "管理局实名票务公告（昆明报业“掌上春城”转载）支持“石林旅游”微信/支付宝小程序或现场窗口购票；实名购票不等于必须提前线上预约。部分优待人群、外宾及18周岁以上学生需持证到线下服务点核验。",
+    "policySource": "https://www.sohu.com/a/852820957_663389",
+    "policyCheckedAt": "2026-10-28"
+  },
+  "东方明珠": {
+    "ticket": "上海市政府2026活动公告列“二球观光”成人原价¥199、儿童¥99、老人¥119，作为该产品参考；三球、餐厅、游船组合与活动票另核对，不能将二球票当作所有楼层通票。",
+    "priceSource": "https://www.shanghai.gov.cn/nw17239/20260519/b4cc7db33efe486b83f02e1b9dc4b712.html",
+    "priceCheckedAt": "2026-10-28"
+  },
+  "上海世博文化公园": {
+    "ticket": "公园公共区域免费开放；上海温室、宠物花园、特定活动或其他经营性项目按各自票务规则收费，不应认为全园全部项目免费。",
+    "priceSource": "https://cmp.whlyj.sh.gov.cn/CMP/tpr_view.ac?id=a4d82953c4fe4584b984eed19a4db444",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "conditional",
+    "reservation": "普通公共园区按上海文旅资料免预约；双子山自2026-06-01取消预约（园方通知经上观刊载），高峰期可单向游览、排队限流。温室、宠物花园、活动及团队等独立项目需另查预约，不能以普通入园规则替代。",
+    "policySource": "https://www.jfdaily.com/sgh/detail?id=1757293",
+    "policyCheckedAt": "2026-10-28",
+    "sources": [
+      {
+        "label": "公园公共区域信息（上海文旅）",
+        "url": "https://cmp.whlyj.sh.gov.cn/CMP/tpr_view.ac?id=a4d82953c4fe4584b984eed19a4db444"
+      }
+    ]
+  },
+  "云南陆军讲武堂旧址": {
+    "ticket": "馆方公告（昆明信息港转载）明确免费参观、实名预约；旧址与展厅开放范围须分别确认，不能将前广场开放理解为全部展厅开放。",
+    "priceSource": "https://m.kunming.cn/news/c/2024-09-30/13878611.shtml",
+    "priceCheckedAt": "2026-10-28",
+    "reservationStatus": "required",
+    "reservation": "馆方自2024-10-01实行全员实名免费预约，通过“云南陆军讲武堂历史博物馆”微信公众号办理。2026-01公告曾仅开放旧址东门前广场；当前主体展厅维修及恢复情况仍待核实，请预约时确认可入区域。",
+    "policySource": "https://m.kunming.cn/news/c/2024-09-30/13878611.shtml",
+    "policyCheckedAt": "2026-10-28",
+    "sources": [
+      {
+        "label": "2026年局部开放与维修报道",
+        "url": "https://www.kunming.cn/news/c/2026-01-22/14012548.shtml"
+      }
+    ],
+    "hours": "官网通常周一闭馆（法定假日除外）；2026年曾进行主体文物维修并局部开放，具体日期与展厅可参观范围以最新预约页面为准。"
+  },
+  "鸡冠洞": {
+    "reservationStatus": "conditional",
+    "reservation": "官网旅游小贴士说明网络票须提前一天预订，可选其列明的合作平台；这一提前量针对网络购票，现场当日票及优免换票是否需另约仍须向景区确认。",
+    "policySource": "https://www.jiguandong.com/xiaotieshi.html",
+    "policyCheckedAt": "2026-10-28",
+    "verificationNote": "官网小贴士可核对网络预订方式及优待人群，但未取得可确认的当前全价票金额；票价继续待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "明堂天堂": {
+    "verificationNote": "历史政府联票活动已结束，网络普通票与套餐报价不一致；当前普通日票、夜游及演出包含范围待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "龙潭大峡谷": {
+    "verificationNote": "查到历史活动联票及旅游平台报价，尚未取得当前景区公开完整票价及预约公告；继续保留缺项待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "重渡沟": {
+    "verificationNote": "旅游平台报价及优待条件存在差异，尚未取得景区当前统一价目表与预约细则；不能据此确定当日售价或免预约。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "中国国花园": {
+    "verificationNote": "已查到2026年4月花会期间调价信息，但不能据此确认10月及全年执行价，当前票价与预约规则继续待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "开封府": {
+    "verificationNote": "日间票、沉浸式夜游和平台优惠属不同产品；尚未取得足以确认当前完整票价及预约要求的官方原文。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "包公祠": {
+    "verificationNote": "历史公开资料与当前旅游平台票价存在差异，缺少新的场所价目表，当前票价继续待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "天波杨府": {
+    "verificationNote": "旅游网站的票价资料不一致，暂未取得可确认的现行官方价目及预约公告，继续保留待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "万岁山武侠城": {
+    "verificationNote": "平台对赠送景区、连续入园天数和适用日期的说明不一致，未取得当前完整官方票规，不将套餐权益作统一承诺。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "铁塔公园": {
+    "verificationNote": "有免费开放与特定活动收费等不同时间资料，尚不能确认当前普通入场与活动票的范围，保持待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "上海海昌海洋公园": {
+    "verificationNote": "官网存在门票价格栏目，但本轮未取得可确认的完整数字价目；平台常规日、高峰日与促销票报价不同，继续保留价格待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "深圳欢乐谷": {
+    "verificationNote": "官网票务栏目部分内容为图片或动态售票，未取得可确认的当前完整金额与适用日历；继续保留缺项待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "杭州乐园": {
+    "verificationNote": "历史活动价与当前旅游平台票种报价不同，未确认对应经营期、成人票及提前票条件，继续待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "杭州宋城": {
+    "verificationNote": "门票与千古情演出、座席和日期票可能组成不同产品，本轮未取得足以核实当前金额及全部预约条件的官方售票条款。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "中国茶叶博物馆": {
+    "verificationNote": "官网曾记载工作日免预约，2026年第三方转载有全面免预约公告；本轮未取得该变更的馆方原始公告，当前完整预约规则与收费范围继续保留待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "南普陀寺": {
+    "verificationNote": "2026年转载资料提示实名分时预约、持证核验；本轮未取得寺方完整现行原文，具体提前量、优待及核验规则继续待核实。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "归元寺": {
+    "verificationNote": "历史节假日价格与2026年春节报道有变化，未取得当前完整官方价目；不沿用旧节日价或将春节票规作为全年规则。",
+    "verificationCheckedAt": "2026-10-28"
+  },
+  "西山龙门": {
+    "verificationNote": "已发现2025年线上预约购票提示及不同交通套餐，景区当前原始价格页未能读取；票价与具体票种预约要求继续待核实。",
+    "verificationCheckedAt": "2026-10-28"
   }
 }
