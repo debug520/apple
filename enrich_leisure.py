@@ -41,7 +41,7 @@ for c in data:
         })
         patch = updates.get(p['name'], {})
         v.update(patch)
-        for field, label in [('policySource', '预约与入园规则'), ('priceSource', '门票参考来源')]:
+        for field, label in [('policySource', '预约与入园规则'), ('priceSource', '门票参考来源'), ('availabilitySource', '开放状态公告')]:
             if patch.get(field) and not any(s['url'] == patch[field] for s in v['sources']):
                 v['sources'].append({'label': label, 'url': patch[field]})
         if p['name'] == '上海迪士尼度假区':
