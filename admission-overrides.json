@@ -1,0 +1,215 @@
+{
+  "北京环球影城": {
+    "reservationStatus": "conditional",
+    "reservation": "指定日门票无需另行预约；非指定日门票与年卡须在官方App或小程序预约入园。按所持票种核对，携带购票所用有效证件原件。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.universalbeijingresort.com/zh_CN/parkresvupdate",
+    "ticket": "官网门票产品展示 ¥350 起，具体日期与适用票种以价格日历为准；起价不等于任何日期的成人票价。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.universalbeijingresort.com/zh_CN/tickets-offers",
+    "transport": "地铁7号线或八通线至环球度假区站，再按现场指引前往安检与主题公园入口。",
+    "extra": "优速通为另购权益，不能单独用于入园；餐饮、商品、酒店、寄存或特定体验另计。",
+    "hours": "每日运营与演出时间请查官方App；入园和热门项目可能提前停止排队。"
+  },
+  "上海迪士尼度假区": {
+    "reservationStatus": "conditional",
+    "reservation": "实名购票，按订单指定日期和条款入园；年卡、非指定日权益等是否另需预约，应按本人产品规则办理。请携带购票证件原件。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.shanghaidisneyresort.com/legal/shdr-park-tickets-terms-conditions/",
+    "ticket": "标准一日票参考 ¥475—799，按日期分档；优惠或早鸟产品另有条件。尊享卡、酒店与其他消费不含在基础票价内。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://shcorporate.shanghaidisneyresort.com/wp-content/uploads/2025/08/新闻稿-这个金秋在上海迪士尼度假区萌聚达菲月，玩转万圣季，畅游奇妙假期.pdf",
+    "address": "上海市浦东新区川沙新镇上海迪士尼度假区",
+    "transport": "可乘地铁11号线至迪士尼站；留出安检、步行和晚间返程时间。",
+    "hours": "每日乐园、演出和设施时间请看官方App运营日历；夜间演出可能因天气调整。",
+    "extra": "乐园门票与迪士尼尊享卡、早享权益、酒店套餐应分别核对。先看儿童年龄票规和各项目身高要求。"
+  },
+  "长隆欢乐世界": {
+    "reservationStatus": "required",
+    "reservation": "官方提示预订门票后提前完成预约，并携带预订时登记的有效身份证件原件入园；具体流程按订单办理。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.chimelong.com/gz/chimelongparadise/",
+    "ticket": "官网标准票参考 ¥250；儿童、长者、青少年等优惠资格及活动票以订单为准。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.chimelong.com/gz/chimelongparadise/"
+  },
+  "长隆野生动物世界": {
+    "reservationStatus": "required",
+    "reservation": "按长隆官方及订单指引提前完成预约，入园携带预订时登记的有效证件原件。不同园区分别核对票务。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.chimelong.com/gz/safaripark/",
+    "ticket": "官网标准票：平日参考 ¥300、特定日参考 ¥350；自驾车辆票等需另看产品条款。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.chimelong.com/gz/ticket/?from=gz-park-water"
+  },
+  "长隆水上乐园": {
+    "reservationStatus": "required",
+    "reservation": "按长隆官方及订单指引提前完成预约，入园携带预订时登记的有效证件原件。不同园区分别核对票务。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.chimelong.com/gz/waterpark/",
+    "availability": "2026经营期已结束",
+    "availabilityCheckedAt": "2026-10-28",
+    "hours": "官网提示2026年经营期已结束，等待下一经营期开园公告；目前不要按可入园景点安排行程。",
+    "ticket": "停运期不展示可购票价；下一经营期票价与开园日期待园方公布。"
+  },
+  "北京欢乐谷": {
+    "ticket": "官网全价票参考 ¥299；儿童与长者等优惠票、特别活动及附加项目另核对。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://mbj.happyvalley.cn/card/index.shtml"
+  },
+  "南京欢乐谷": {
+    "ticket": "官网全价票参考 ¥260；大学生票参考 ¥220，官网说明研究生、博士生不适用该大学生优惠。当前单园区或套餐票须另核对。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://nj.happyvalley.cn/about/ticket.shtml"
+  },
+  "成都动物园": {
+    "ticket": "官网成人票参考 ¥20；优待与免票条件请核对园方入园须知。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.cdzoo.com.cn/",
+    "hours": "官网：3—10月8:00—17:30；11—2月8:30—17:30，特殊调整以公告为准。"
+  },
+  "苏州乐园森林世界": {
+    "ticket": "苏州市旅游公共服务页面参考 ¥230；具体日期、票种与活动执行价以景区售票页为准。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://visitsz.wglj.suzhou.com.cn/scenic-spot-detail.aspx?id=60"
+  },
+  "上方山森林动物世界": {
+    "ticket": "苏州市民价格手册列示门票价格上限 ¥60；优惠与活动日执行政策请另查。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc"
+  },
+  "青岛海底世界": {
+    "ticket": "官网通票参考 ¥170；通票覆盖馆区、特展与优惠对象请看购票说明。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.qdhdworld.com/"
+  },
+  "厦门方特梦幻王国": {
+    "ticket": "官网标准票参考 ¥299，小童/老人票参考 ¥220；优惠资格与游玩日期执行价请看订单。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://xiamen.fangte.com/"
+  },
+  "济南野生动物世界": {
+    "ticket": "官网全价票参考 ¥160、优惠票参考 ¥120；自驾车辆票与部分园内交通另计。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.jnysdwsj.com/"
+  },
+  "武汉海昌极地海洋公园": {
+    "ticket": "官网页面成人票参考 ¥240、儿童/老人票参考 ¥150；页面资讯可能滞后，当前套餐与适用范围请向园方核实。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.haichangoceanpark.com/wuhan/"
+  },
+  "重庆欢乐谷": {
+    "ticket": "两江新区2026年公开资料：全日票平日参考 ¥200、高峰日参考 ¥220；实际执行及新票型看当日公告。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.ljxq.gov.cn/jz/ljjd_504288/zwgk/zfxxgkml/jczwgk/ggwhfwly/ggfw/ggwlmulu/202603/t20260304_15491947.html"
+  },
+  "七彩云南欢乐世界": {
+    "ticket": "昆明官方旅游网站参考成人 ¥280—320；来源票档可能调整，勿作为当日保证售价。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://chinakunming.travel/en/destinations/item/34263/colorful-yunnan-paradise"
+  },
+  "上海乐高乐园度假区": {
+    "ticket": "官网一日票产品展示 ¥300 起；按游玩日期、年龄和票种核价，起价不代表所有成人日期票。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://legolandshanghai.cn/"
+  },
+  "拙政园": {
+    "ticket": "苏州市民价格手册列示普通门票淡旺季价格上限 ¥70—80；特展、夜游、讲解与交通不默认包含。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc"
+  },
+  "留园": {
+    "ticket": "苏州市民价格手册列示普通门票淡旺季价格上限 ¥45—55；特展、夜游、讲解与交通不默认包含。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc"
+  },
+  "虎丘": {
+    "ticket": "苏州市民价格手册列示普通门票淡旺季价格上限 ¥60—70；特展、夜游、讲解与交通不默认包含。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc"
+  },
+  "狮子林": {
+    "ticket": "苏州市民价格手册列示普通门票淡旺季价格上限 ¥30—40；特展、夜游、讲解与交通不默认包含。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc"
+  },
+  "网师园": {
+    "ticket": "苏州市民价格手册列示普通门票淡旺季价格上限 ¥30—40；特展、夜游、讲解与交通不默认包含。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc"
+  },
+  "沧浪亭": {
+    "ticket": "苏州市民价格手册列示普通门票淡旺季价格上限 ¥15—20；特展、夜游、讲解与交通不默认包含。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://credit.suzhou.gov.cn/html/wap_jgsc"
+  },
+  "故宫": {
+    "reservationStatus": "required",
+    "reservation": "不售当日票；普通观众须实名预约。参观前7日20:00起放票，按预约日期入院；周一通常闭馆，法定节假日除外。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.dpm.org.cn/singles_detail/259831.html",
+    "ticket": "旺季（4—10月）大门票 ¥60，淡季（11—次年3月）¥40；珍宝馆、钟表馆各 ¥10，优惠对象另核对。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.dpm.org.cn/Visit.html",
+    "transport": "午门为参观入口；神武门或东华门可离院。导航应选择午门方向，预留外围步行与安检时间。",
+    "hours": "淡旺季、节假日停止检票时间不同，参观日请查看官方开放日历。"
+  },
+  "中国国家博物馆": {
+    "reservationStatus": "required",
+    "reservation": "通过官方平台实名免费预约，最多提前7天，每日17:00放票；按预约时段从北门核验，携带预约证件原件。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.chnmuseum.cn/gbgg/202507/t20250725_272247.shtml",
+    "ticket": "基本参观免费（¥0），特展、活动与服务是否另收费请看具体公告。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.chnmuseum.cn/gbgg/202507/t20250725_272247.shtml"
+  },
+  "陕西历史博物馆": {
+    "reservationStatus": "required",
+    "reservation": "本馆基本陈列通过官方微信公众号实名预约；官网当前说明提前5天、每日17:00放票。信息预填不代表预约成功，需查成功订单。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.sxhm.com/guide.html",
+    "ticket": "基本陈列免费（¥0）；唐代壁画珍品展等收费展另购票，具体票价与入馆权益以官网当期说明为准。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.sxhm.com/guide.html"
+  },
+  "南京博物院": {
+    "reservationStatus": "required",
+    "reservation": "全员实名预约；官网说明提前7日（不含当日）、每日18:00放票。按预约上午或下午时段入馆，未成年人按亲子票规则办理。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.njmuseum.org.cn/zh/visitIndex",
+    "ticket": "常设基本陈列等免费（¥0）；市场化临展、展演等可能收费，需另核对。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.njmuseum.org.cn/zh/visitIndex"
+  },
+  "广东省博物馆": {
+    "reservationStatus": "required",
+    "reservation": "全员（含儿童）分时段实名预约，官方参观指南列明22:00放票；请按预约时段持证入馆。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.gdmuseum.org.cn/col666/",
+    "ticket": "基本参观免费（¥0），收费特展与其他服务按当期公告。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.gdmuseum.org.cn/"
+  },
+  "湖北省博物馆": {
+    "reservationStatus": "required",
+    "reservation": "通过馆方官方预约渠道预约免费入馆；编钟演出、VR等另按产品规则购票，不能以演出票替代入馆预约。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.hbww.org.cn/yyxz/p/9085.html",
+    "ticket": "入馆免费（¥0），不收预约费；编钟演出、VR与停车等可能另收费。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://www.hbww.org.cn/yyxz/p/9085.html"
+  },
+  "深圳博物馆历史民俗馆": {
+    "reservationStatus": "not-required",
+    "reservation": "官方指南说明金田路馆（历史民俗）免预约，入馆需安检；活动、讲座和其他馆址须分别看规则。",
+    "policyCheckedAt": "2026-10-28",
+    "policySource": "https://www.shenzhenmuseum.com/guide",
+    "hours": "通常周一闭馆，节假日安排另查；官网不同栏目开放起始时间不一致，出发前向馆方确认。"
+  },
+  "广州动物园": {
+    "ticket": "广州市林业和园林局2026年说明：成人全票 ¥20，优惠票 ¥10；优惠资格须提供对应证件。",
+    "priceCheckedAt": "2026-10-28",
+    "priceSource": "https://lyylj.gz.gov.cn/zmhd/cjwt/gyjq/content/post_10743839.html",
+    "extra": "官方渠道为现场窗口、广州动物园公众号及授权同程平台。不要通过未授权转售渠道购买门票。"
+  }
+}
