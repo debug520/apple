@@ -5,6 +5,9 @@ cp expansion-ui.js catalog-ui.js compact-ui.js compact.css practical-ui.js pract
 python3 enrich.py
 python3 enrich_leisure.py
 python3 enrich_catalog.py
+python3 check_catalog.py
+python3 prepare_national.py
+cp national-model.js national-ui.js national-integration.js national.css destinations.html dist/
 python3 - <<'PY'
 from pathlib import Path
 p=Path('dist/travel.html')
@@ -17,6 +20,8 @@ s=s.replace('</head>','<link rel="stylesheet" href="practical.css?v=20261028c"><
 s=s.replace('v=20261028c','v=20261029c')
 s=s.replace('<script src="app.js">','<script src="catalog-photos.js?v=20261029c"></script><script src="app.js">')
 s=s.replace('</head>','<link rel="stylesheet" href="discovery.css?v=20261029c"></head>').replace('</body>','<script src="discovery-ui.js?v=20261029c"></script></body>')
+s=s.replace('</head>','<link rel="stylesheet" href="national.css?v=20261029n1"></head>')
+s=s.replace('</body>','<script src="national-data.js?v=20261029n1"></script><script src="national-model.js?v=20261029n1"></script><script src="national-ui.js?v=20261029n1"></script><script src="national-integration.js?v=20261029n1"></script></body>')
 b=Path('dist/basic.js')
 b.write_text('\n'.join(line for line in b.read_text().splitlines() if not line.startswith('const basicMine=minePage;'))+'\n')
 p.write_text(s)
@@ -24,3 +29,7 @@ Path('dist/index.html').write_text(s)
 Path('dist/travel').mkdir(exist_ok=True)
 Path('dist/travel/index.html').write_text(s.replace('<head>','<head><base href="/">'))
 PY
+node --check dist/national-ui.js
+node --check dist/national-integration.js
+node check_national.cjs
+node check_national_live.cjs

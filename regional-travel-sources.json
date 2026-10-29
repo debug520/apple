@@ -1,0 +1,771 @@
+{
+  "provinces": [
+    {
+      "name": "北京",
+      "code": "11",
+      "travelUrl": "https://whlyj.beijing.gov.cn/",
+      "travelLabel": "北京市文化和旅游局",
+      "region": "华北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "天津",
+      "code": "12",
+      "travelUrl": "https://whly.tj.gov.cn/",
+      "travelLabel": "天津市文化和旅游局",
+      "region": "华北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "河北",
+      "code": "13",
+      "travelUrl": "https://whly.hebei.gov.cn/",
+      "travelLabel": "河北省文化和旅游厅",
+      "region": "华北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "山西",
+      "code": "14",
+      "travelUrl": "https://wlt.shanxi.gov.cn/",
+      "travelLabel": "山西省文化和旅游厅",
+      "region": "华北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "内蒙古",
+      "code": "15",
+      "travelUrl": "https://wlt.nmg.gov.cn/",
+      "travelLabel": "内蒙古自治区文化和旅游厅",
+      "region": "华北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "辽宁",
+      "code": "21",
+      "travelUrl": "https://whly.ln.gov.cn/",
+      "travelLabel": "辽宁省文化和旅游厅",
+      "region": "东北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "吉林",
+      "code": "22",
+      "travelUrl": "https://whhlyt.jl.gov.cn/",
+      "travelLabel": "吉林省文化和旅游厅",
+      "region": "东北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "黑龙江",
+      "code": "23",
+      "travelUrl": "https://wlt.hlj.gov.cn/",
+      "travelLabel": "黑龙江省文化和旅游厅",
+      "region": "东北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "上海",
+      "code": "31",
+      "travelUrl": "https://whlyj.sh.gov.cn/",
+      "travelLabel": "上海市文化和旅游局",
+      "region": "华东",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "江苏",
+      "code": "32",
+      "travelUrl": "https://wlt.jiangsu.gov.cn/",
+      "travelLabel": "江苏省文化和旅游厅",
+      "region": "华东",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "浙江",
+      "code": "33",
+      "travelUrl": "https://ct.zj.gov.cn/",
+      "travelLabel": "浙江省文化和旅游厅",
+      "region": "华东",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "安徽",
+      "code": "34",
+      "travelUrl": "https://ct.ah.gov.cn/",
+      "travelLabel": "安徽省文化和旅游厅",
+      "region": "华东",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "福建",
+      "code": "35",
+      "travelUrl": "https://wlt.fujian.gov.cn/",
+      "travelLabel": "福建省文化和旅游厅",
+      "region": "华东",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "江西",
+      "code": "36",
+      "travelUrl": "https://dct.jiangxi.gov.cn/",
+      "travelLabel": "江西省文化和旅游厅",
+      "region": "华东",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "山东",
+      "code": "37",
+      "travelUrl": "https://whhly.shandong.gov.cn/",
+      "travelLabel": "山东省文化和旅游厅",
+      "region": "华东",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "河南",
+      "code": "41",
+      "travelUrl": "https://hct.henan.gov.cn/",
+      "travelLabel": "河南省文化和旅游厅",
+      "region": "华中",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "湖北",
+      "code": "42",
+      "travelUrl": "https://wlt.hubei.gov.cn/",
+      "travelLabel": "湖北省文化和旅游厅",
+      "region": "华中",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "湖南",
+      "code": "43",
+      "travelUrl": "https://whhlyt.hunan.gov.cn/",
+      "travelLabel": "湖南省文化和旅游厅",
+      "region": "华中",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "广东",
+      "code": "44",
+      "travelUrl": "https://whly.gd.gov.cn/",
+      "travelLabel": "广东省文化和旅游厅",
+      "region": "华南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "广西",
+      "code": "45",
+      "travelUrl": "https://wlt.gxzf.gov.cn/",
+      "travelLabel": "广西壮族自治区文化和旅游厅",
+      "region": "华南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "海南",
+      "code": "46",
+      "travelUrl": "https://lwt.hainan.gov.cn/",
+      "travelLabel": "海南省旅游和文化广电体育厅",
+      "region": "华南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "重庆",
+      "code": "50",
+      "travelUrl": "https://whlyw.cq.gov.cn/",
+      "travelLabel": "重庆市文化和旅游发展委员会",
+      "region": "西南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "四川",
+      "code": "51",
+      "travelUrl": "https://wlt.sc.gov.cn/",
+      "travelLabel": "四川省文化和旅游厅",
+      "region": "西南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "贵州",
+      "code": "52",
+      "travelUrl": "https://whhly.guizhou.gov.cn/",
+      "travelLabel": "贵州省文化和旅游厅",
+      "region": "西南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "云南",
+      "code": "53",
+      "travelUrl": "https://dct.yn.gov.cn/",
+      "travelLabel": "云南省文化和旅游厅",
+      "region": "西南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "西藏",
+      "code": "54",
+      "travelUrl": "https://wlt.xizang.gov.cn/",
+      "travelLabel": "西藏自治区文化和旅游厅",
+      "region": "西南",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "陕西",
+      "code": "61",
+      "travelUrl": "https://whhlyt.shaanxi.gov.cn/",
+      "travelLabel": "陕西省文化和旅游厅",
+      "region": "西北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "甘肃",
+      "code": "62",
+      "travelUrl": "https://wlt.gansu.gov.cn/",
+      "travelLabel": "甘肃省文化和旅游厅",
+      "region": "西北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "青海",
+      "code": "63",
+      "travelUrl": "https://whlyt.qinghai.gov.cn/",
+      "travelLabel": "青海省文化和旅游厅",
+      "region": "西北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "宁夏",
+      "code": "64",
+      "travelUrl": "https://whhlyt.nx.gov.cn/",
+      "travelLabel": "宁夏回族自治区文化和旅游厅",
+      "region": "西北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "新疆",
+      "code": "65",
+      "travelUrl": "https://wlt.xinjiang.gov.cn/",
+      "travelLabel": "新疆维吾尔自治区文化和旅游厅",
+      "region": "西北",
+      "source": "https://wlt.hubei.gov.cn/fzlm/yqlj/gswlwz/",
+      "verification": "official-directory",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "台湾",
+      "code": "71",
+      "travelUrl": "https://www.taiwan.net.tw/",
+      "travelLabel": "台湾观光资讯网",
+      "region": "港澳台",
+      "source": "https://www.taiwan.net.tw/m1.aspx?sNo=0001016",
+      "verification": "opened-official-page",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "香港",
+      "code": "81",
+      "travelUrl": "https://www.discoverhongkong.com/tc/index.html",
+      "travelLabel": "香港旅游发展局",
+      "region": "港澳台",
+      "source": "https://www.discoverhongkong.com/tc/index.html",
+      "verification": "opened-official-page",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "name": "澳门",
+      "code": "82",
+      "travelUrl": "https://www.macaotourism.gov.mo/zh-hant/",
+      "travelLabel": "澳门特别行政区政府旅游局",
+      "region": "港澳台",
+      "source": "https://www.macaotourism.gov.mo/zh-hant/",
+      "verification": "opened-official-page",
+      "checkedAt": "2026-10-29"
+    }
+  ],
+  "extraDestinations": [
+    {
+      "id": "tw-taipei",
+      "name": "台北市",
+      "shortName": "台北",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "tai bei shi",
+      "aliases": [
+        "臺北市",
+        "台北市",
+        "台北"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001090"
+    },
+    {
+      "id": "tw-new-taipei",
+      "name": "新北市",
+      "shortName": "新北",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "xin bei shi",
+      "aliases": [
+        "新北市",
+        "新北"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001091"
+    },
+    {
+      "id": "tw-keelung",
+      "name": "基隆市",
+      "shortName": "基隆",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "ji long shi",
+      "aliases": [
+        "基隆市",
+        "基隆"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001105"
+    },
+    {
+      "id": "tw-yilan",
+      "name": "宜兰县",
+      "shortName": "宜兰",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "yi lan xian",
+      "aliases": [
+        "宜蘭縣",
+        "宜兰"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001106"
+    },
+    {
+      "id": "tw-taoyuan",
+      "name": "桃园市",
+      "shortName": "桃园",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "tao yuan shi",
+      "aliases": [
+        "桃園市",
+        "桃园"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001107"
+    },
+    {
+      "id": "tw-hsinchu-county",
+      "name": "新竹县",
+      "shortName": "新竹",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "xin zhu xian",
+      "aliases": [
+        "新竹縣",
+        "新竹"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001108"
+    },
+    {
+      "id": "tw-hsinchu-city",
+      "name": "新竹市",
+      "shortName": "新竹",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "xin zhu shi",
+      "aliases": [
+        "新竹市",
+        "新竹"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001109"
+    },
+    {
+      "id": "tw-miaoli",
+      "name": "苗栗县",
+      "shortName": "苗栗",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "miao li xian",
+      "aliases": [
+        "苗栗縣",
+        "苗栗"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001110"
+    },
+    {
+      "id": "tw-taichung",
+      "name": "台中市",
+      "shortName": "台中",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "tai zhong shi",
+      "aliases": [
+        "臺中市",
+        "台中市",
+        "台中"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001112"
+    },
+    {
+      "id": "tw-changhua",
+      "name": "彰化县",
+      "shortName": "彰化",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "zhang hua xian",
+      "aliases": [
+        "彰化縣",
+        "彰化"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001113"
+    },
+    {
+      "id": "tw-nantou",
+      "name": "南投县",
+      "shortName": "南投",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "nan tou xian",
+      "aliases": [
+        "南投縣",
+        "南投"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001114"
+    },
+    {
+      "id": "tw-yunlin",
+      "name": "云林县",
+      "shortName": "云林",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "yun lin xian",
+      "aliases": [
+        "雲林縣",
+        "云林"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001115"
+    },
+    {
+      "id": "tw-chiayi-county",
+      "name": "嘉义县",
+      "shortName": "嘉义",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "jia yi xian",
+      "aliases": [
+        "嘉義縣",
+        "嘉义"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001116"
+    },
+    {
+      "id": "tw-chiayi-city",
+      "name": "嘉义市",
+      "shortName": "嘉义",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "jia yi shi",
+      "aliases": [
+        "嘉義市",
+        "嘉义"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001117"
+    },
+    {
+      "id": "tw-tainan",
+      "name": "台南市",
+      "shortName": "台南",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "tai nan shi",
+      "aliases": [
+        "臺南市",
+        "台南市",
+        "台南"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001119"
+    },
+    {
+      "id": "tw-kaohsiung",
+      "name": "高雄市",
+      "shortName": "高雄",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "gao xiong shi",
+      "aliases": [
+        "高雄市",
+        "高雄"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001121"
+    },
+    {
+      "id": "tw-pingtung",
+      "name": "屏东县",
+      "shortName": "屏东",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "ping dong xian",
+      "aliases": [
+        "屏東縣",
+        "屏东"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001122"
+    },
+    {
+      "id": "tw-hualien",
+      "name": "花莲县",
+      "shortName": "花莲",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "hua lian xian",
+      "aliases": [
+        "花蓮縣",
+        "花莲"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001124"
+    },
+    {
+      "id": "tw-taitung",
+      "name": "台东县",
+      "shortName": "台东",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "tai dong xian",
+      "aliases": [
+        "臺東縣",
+        "台東縣",
+        "台东"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001123"
+    },
+    {
+      "id": "tw-penghu",
+      "name": "澎湖县",
+      "shortName": "澎湖",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "peng hu xian",
+      "aliases": [
+        "澎湖縣",
+        "澎湖"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001125"
+    },
+    {
+      "id": "tw-kinmen",
+      "name": "金门县",
+      "shortName": "金门",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "jin men xian",
+      "aliases": [
+        "金門縣",
+        "金门"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001126"
+    },
+    {
+      "id": "tw-lienchiang",
+      "name": "连江县",
+      "shortName": "连江",
+      "province": "台湾",
+      "provinceCode": "71",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "县市",
+      "pinyin": "lian jiang xian",
+      "aliases": [
+        "連江縣",
+        "连江",
+        "马祖",
+        "馬祖",
+        "連江縣(馬祖)"
+      ],
+      "source": "台湾观光资讯网｜交通部观光署",
+      "url": "https://www.taiwan.net.tw/m1.aspx?sno=0001127"
+    },
+    {
+      "id": "hk",
+      "name": "香港",
+      "shortName": "香港",
+      "province": "香港",
+      "provinceCode": "81",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "特别行政区",
+      "pinyin": "xiang gang",
+      "aliases": [
+        "香港特别行政区",
+        "香港特別行政區",
+        "Hong Kong"
+      ],
+      "source": "香港旅游发展局",
+      "url": "https://www.discoverhongkong.com/tc/index.html"
+    },
+    {
+      "id": "mo",
+      "name": "澳门",
+      "shortName": "澳门",
+      "province": "澳门",
+      "provinceCode": "82",
+      "prefecture": "",
+      "level": "prefecture",
+      "kind": "特别行政区",
+      "pinyin": "ao men",
+      "aliases": [
+        "澳門",
+        "澳门特别行政区",
+        "澳門特別行政區",
+        "Macao",
+        "Macau"
+      ],
+      "source": "澳门特别行政区政府旅游局",
+      "url": "https://www.macaotourism.gov.mo/zh-hant/"
+    }
+  ],
+  "sourceNotes": {
+    "checkedAt": "2026-10-29",
+    "mainland": "31个大陆省级文化旅游主管部门官网，以湖北省文化和旅游厅官方友情链接目录交叉核验。自动抓取部分门户受403、405、412、521或超时限制，链接存在于官方目录，不代表实时可访问性保证。",
+    "taiwan": "台湾观光署观光景点目录列出22县市；逐个县市详情页已打开核验。县市名称用简体展示，保留官方繁体别名。",
+    "scope": "旅游目的地目录不构成入境许可、景区运营或旅行限制说明。"
+  }
+}
