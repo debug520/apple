@@ -2,7 +2,13 @@
 let discoveryCity='', discoveryPlaceQuery='', discoveryFoodQuery='', discoveryArea='全部片区';
 function discoveryReset(){if(discoveryCity!==cid){discoveryCity=cid;discoveryPlaceQuery='';discoveryFoodQuery='';discoveryArea='全部片区'}}
 function discoverySearch(p,q){return [p.name,p.area,p.group,p.story,p.description,p.ingredients,p.taste].join(' ').toLowerCase().includes(q.trim().toLowerCase())}
-function discoveryAreaOf(p){return p.area?String(p.area).split(/[·•/]/)[0].trim():'片区未标注'}
+function discoveryAreaOf(p){
+ if(!p.area)return '片区未标注';
+ const parts=String(p.area).split(/[·•/]/).map(x=>x.trim()).filter(Boolean);
+ if(parts[0]===C().name||parts[0]===C().name+'市')parts.shift();
+ const area=parts[0]||String(p.area);
+ return area.match(/^.+?[区县]/)?.[0]||area;
+}
 function discoveryPlaceRows(){return filteredPlaces().filter(({p})=>(discoveryArea==='全部片区'||discoveryAreaOf(p)===discoveryArea)&&discoverySearch(p,discoveryPlaceQuery))}
 function discoveryPlaceResults(){const rows=discoveryPlaceRows();document.getElementById('discoveryPlaceCount').textContent=`${rows.length} / ${C().places.length} 个地点`;document.getElementById('discoveryPlaceList').innerHTML=rows.length?rows.map(({p,i})=>listcard(p,i)).join(''):'<p class="empty">没有符合筛选的地点，请更换关键词、片区或分类。</p>';bind()}
 placesPage=function(){
