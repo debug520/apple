@@ -1,5 +1,6 @@
 """Validate expansion invariants against the preceding published release."""
 import json
+import zipfile
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -8,6 +9,10 @@ DIST = ROOT / 'dist'
 data = json.loads((DIST/'city-data.js').read_text()[len('window.DATA='):].rstrip(';\n'))
 expansion = json.loads((ROOT/'catalog-expansion.json').read_text())
 photos = json.loads((ROOT/'catalog-photo-manifest.json').read_text())['items']
+archive_files = set()
+for archive in ROOT.glob('assets-*.zip'):
+    with zipfile.ZipFile(archive) as z:
+        archive_files.update(z.namelist())
 assert len(data) == 20
 assert sum(len(c['places']) for c in data) == 800
 assert sum(len(c['foods']) for c in data) == 600
@@ -38,6 +43,7 @@ assert sum(len(c['foods']) for c in expansion['cities']) == 400
 assert len({(p['city'],p['type'],p['name']) for p in photos}) == len(photos)
 for p in photos:
     assert (DIST/p['file']).is_file(), p['file']
+    assert p['file'] in archive_files, ('Photo missing from deploy archives',p['file'])
     assert urlparse(p['source']).scheme in ('http','https')
     assert urlparse(p['originalImage']).scheme in ('http','https')
 report = {'cities':20,'places':800,'foods':600,'newPlaces':498,'newFoods':400,'newPhotoRecords':len(photos),'merchants':sum(len(c['merchants']) for c in data),'priceSources':sum(bool(p['visit'].get('priceSource')) for c in data for p in c['places']),'reservationRules':sum(bool(p['visit'].get('policySource')) and p['visit']['reservationStatus']!='unknown' for c in data for p in c['places'])}
