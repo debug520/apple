@@ -22,7 +22,7 @@ placesPage=function(){
 };
 function admissionDirectory(){
  const places=C().places,prices=places.filter(p=>p.visit?.priceSource).length,policies=places.filter(p=>p.visit?.policySource&&p.visit.reservationStatus!=='unknown').length;
- sheet(`<h1>${esc(C().name)} · 预约与门票</h1><p>价格资料 ${prices}/${places.length} · 预约规则 ${policies}/${places.length}</p><p class="source">本轮资料核对：2026-10-28。每项详情附来源与核对日期；政府指导价、季节价和日期票会分别说明。暂未找到可靠公开资料的项目保留待核实，不能据此当作免费或免预约。</p><label class="srOnly" for="admissionQuery">筛选景点票务</label><input id="admissionQuery" class="searchInput" placeholder="搜索景点、乐园或预约关键词" oninput="admissionResults(this.value)"><div id="admissionResults"></div>`);admissionResults('');
+ sheet(`<h1>${esc(C().name)} · 预约与门票</h1><p>价格资料 ${prices}/${places.length} · 预约规则 ${policies}/${places.length}</p><p class="source">票务资料自2026-10-28起持续补充，每项详情附来源与实际核对日期；政府指导价、季节价和日期票会分别说明。暂未找到可靠公开资料的项目保留待核实，不能据此当作免费或免预约。</p><label class="srOnly" for="admissionQuery">筛选景点票务</label><input id="admissionQuery" class="searchInput" placeholder="搜索景点、乐园或预约关键词" oninput="admissionResults(this.value)"><div id="admissionResults"></div>`);admissionResults('');
 }
 function admissionResults(query){
  const q=query.trim().toLowerCase();const rows=C().places.map((p,i)=>({p,i})).filter(({p})=>(p.name+p.group+p.visit.reservation+p.visit.ticket).toLowerCase().includes(q));

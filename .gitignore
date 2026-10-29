@@ -5,3 +5,5 @@ photo-download-report.json
 review-*.jpg
 upload-*.b64
 research/
+
+__pycache__/

@@ -1,0 +1,16 @@
+{
+  "深圳天文台": {
+    "reservationStatus": "required",
+    "reservation": "通过深圳市气象局天文台官方入口预约；按所约时段扫码签到，不接受提前入场。不能到访请及时取消。",
+    "ticket": "¥0（天文台参观）；停车、社区接驳及西涌海滩票另行核实，免费参观不包含海滩入场。",
+    "hours": "按预约时段参观；当天可约时段以官方预约页为准，相关天气预警及恶劣天气可能即时闭园。",
+    "transport": "上山公路仅允许内部车辆；访客车辆停山下海滩停车场，再步行或选择社区接驳。停车及接驳费用待核实。",
+    "extra": "前往西涌海滩需另外购票或补票，天文台免费参观不包含海滩入场、停车与接驳费用。",
+    "priceSource": "https://weather.sz.gov.cn/mobile/qixiangfuwu/tianwenfuwu/yuyuexuzhi/index.html",
+    "policySource": "https://weather.sz.gov.cn/mobile/qixiangfuwu/tianwenfuwu/yuyuexuzhi/index.html",
+    "priceCheckedAt": "2026-10-29",
+    "policyCheckedAt": "2026-10-29",
+    "verificationNote": "官方须知更新于2025-07-02，本次查阅为2026-10-29；未接入实时余位及天气闭园状态。",
+    "verificationCheckedAt": "2026-10-29"
+  }
+}

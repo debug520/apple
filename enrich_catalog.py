@@ -16,6 +16,7 @@ data = json.loads((DIST / 'city-data.js').read_text()[len('window.DATA='):].rstr
 original = {c['id']: {t: list(c[t]) for t in ('places', 'foods')} for c in data}
 photos = {(p['city'], p['type'], p['name']): p for p in read('catalog-photo-manifest.json')['items']}
 entries = {}
+visit_overrides = read('catalog-visit-overrides.json')
 for row in read('catalog-expansion.json')['cities']:
     c = next(c for c in data if c['id'] == row['id'])
     for t in ('places', 'foods'):
@@ -27,7 +28,7 @@ for row in read('catalog-expansion.json')['cities']:
             p.pop('photoQuery', None)
             p['group'] = p['category']
             p['evidence'] = '地点介绍与游览背景资料（非当前票务核实）' if t == 'places' else '地方风味资料；配方因店家而异'
-            p['catalogAddedAt'] = '2026-10-28'
+            p['catalogAddedAt'] = '2026-10-29'
             if t == 'places':
                 assert p['category'] in ['历史人文','博物馆','街区夜游','自然公园','主题乐园','动物海洋']
                 p['reading'] = {'history': p['story'], 'lookFor': p.pop('lookFor'), 'visitAdvice': p['tip']}
@@ -44,9 +45,15 @@ for row in read('catalog-expansion.json')['cities']:
                     'sources':[{'label':'地点背景资料（非票务核实）','url':p['url']}]
                 }
                 p['visit'].update(p.pop('visitOverride', {}))
+                p['visit'].update(visit_overrides.get(p['name'], {}))
+                for field,label in [('priceSource','门票参考来源'),('policySource','预约与入园规则')]:
+                    source = p['visit'].get(field)
+                    if source and not any(s['url']==source for s in p['visit']['sources']):
+                        url_ok(source)
+                        p['visit']['sources'].append({'label':label,'url':source})
                 if p.get('excludeFromPlan'):
                     p['visit']['availability'] = p.get('closureNote', '有暂停开放提示，恢复情况待核实；自动行程暂不安排。')
-                    p['visit']['availabilityCheckedAt'] = '2026-10-28'
+                    p['visit']['availabilityCheckedAt'] = '2026-10-29'
                     if p.get('closureSource'):
                         url_ok(p['closureSource'])
                         p['visit']['sources'].append({'label':'开放状态提醒','url':p['closureSource']})
@@ -67,7 +74,7 @@ for row in read('catalog-expansion.json')['cities']:
     c['merchants'] = row.get('merchants', [])
     for m in c['merchants']:
         url_ok(m['url'])
-    c['updatedAt'] = '2026-10-28'
+    c['updatedAt'] = '2026-10-29'
 
 assert len(data) == 20
 for c in data:

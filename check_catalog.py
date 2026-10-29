@@ -22,8 +22,12 @@ for c in data:
             if p.get('photo'):
                 assert (DIST/p['photo']).is_file(), p['photo']
             if p.get('catalogAddedAt') and t == 'places':
-                assert p['visit']['reservationStatus'] == 'unknown', p['name']
-                assert not p['visit'].get('priceSource') and not p['visit'].get('policySource'), p['name']
+                if p['visit'].get('policySource'):
+                    assert p['visit'].get('policyCheckedAt') and p['visit']['sources'], p['name']
+                else:
+                    assert p['visit']['reservationStatus'] == 'unknown', p['name']
+                if p['visit'].get('priceSource'):
+                    assert p['visit'].get('priceCheckedAt') and p['visit']['sources'], p['name']
                 assert p['reading']['lookFor'] and p['reading']['visitAdvice']
     assert len(c.get('merchants',[])) >= 3, c['id']
 for c_id,name in [('luoyang','洛阳博物馆'),('chengdu','金沙遗址博物馆'),('guangzhou','长隆水上乐园')]:
