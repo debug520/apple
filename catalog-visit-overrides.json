@@ -11,6 +11,12 @@
     "priceCheckedAt": "2026-10-29",
     "policyCheckedAt": "2026-10-29",
     "verificationNote": "官方须知更新于2025-07-02，本次查阅为2026-10-29；未接入实时余位及天气闭园状态。",
-    "verificationCheckedAt": "2026-10-29"
+    "verificationCheckedAt": "2026-10-29",
+    "sources": [
+      {
+        "label": "深圳市气象局官方预约与免费入场须知",
+        "url": "https://weather.sz.gov.cn/mobile/qixiangfuwu/tianwenfuwu/yuyuexuzhi/index.html"
+      }
+    ]
   }
 }
