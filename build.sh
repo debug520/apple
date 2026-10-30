@@ -8,7 +8,8 @@ python3 enrich_catalog.py
 python3 check_catalog.py
 python3 enrich_hot.py
 python3 prepare_national.py
-cp national-model.js national-ui.js national-integration.js national.css destinations.html hot-ui.js dist/
+python3 prepare_atlas.py
+cp national-model.js national-ui.js national-integration.js national.css destinations.html hot-ui.js atlas-ui.js atlas.css dist/
 python3 - <<'PY'
 from pathlib import Path
 p=Path('dist/travel.html')
@@ -28,6 +29,7 @@ s=s.replace('</body>','<script src="hot-ui.js?v=20261030h8"></script></body>')
 s=s.replace('v=20261029n1','v=20261030h8').replace('src="city-data.js?v=20261029c"','src="city-data.js?v=20261030h8"')
 b=Path('dist/basic.js')
 b.write_text('\n'.join(line for line in b.read_text().splitlines() if not line.startswith('const basicMine=minePage;'))+'\n')
+s=s.replace('</head>','<link rel="stylesheet" href="atlas.css?v=20261030m1"></head>').replace('</body>','<script src="atlas-data.js?v=20261030m1"></script><script src="atlas-ui.js?v=20261030m1"></script></body>')
 p.write_text(s)
 Path('dist/index.html').write_text(s)
 Path('dist/travel').mkdir(exist_ok=True)
@@ -37,3 +39,6 @@ node --check dist/national-ui.js
 node --check dist/national-integration.js
 node check_national.cjs
 node check_hot.cjs
+
+node --check dist/atlas-ui.js
+node check_atlas.cjs

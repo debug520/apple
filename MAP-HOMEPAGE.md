@@ -1,0 +1,7 @@
+# Map homepage
+
+The home page selects destinations from a China province map, with guide markers and province-level city selection. Directory-only destinations show their coverage before entering official information. All existing guides, item IDs and browser records are retained. City deep links retain the guide view; Home and Return to map clear the destination parameter.
+
+Map source: Alibaba Cloud DataV.GeoAtlas https://datav.aliyun.com/portal/school/atlas/area_selector , retrieved 2026-10-30 from https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json . The raw country geometry is retained in map-source/china.json; map-source/centres.json contains reference centres extracted from the province `_full.json` downloads and 620900_full.json for Dunhuang. Taiwan city centres were unavailable from this source, so its destinations use the list. Current destination names and hierarchy come from the existing national directory. Map centres do not represent entrances or navigation coordinates.
+
+prepare_atlas.py projects local geometry into SVG paths including the South China Sea inset. atlas-ui.js and atlas.css implement the responsive selection flow without runtime third-party map requests. Build with bash build.sh; check_atlas.cjs verifies province selection, coverage, search, return navigation and unchanged guide data.
