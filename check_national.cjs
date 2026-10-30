@@ -4,12 +4,12 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 function loadData(path,prefix){return JSON.parse(fs.readFileSync(path,'utf8').slice(prefix.length).replace(/;\s*$/,''))}
 const data=loadData('dist/national-data.js','window.NATIONAL='),guides=loadData('dist/city-data.js','window.DATA=');
 const report=JSON.parse(fs.readFileSync('dist/national-validation.json','utf8'));
-assert.equal(data.destinations.length,3212);assert.equal(guides.length,20);
+assert.equal(data.destinations.length,3212);assert.equal(guides.length,28);
 assert.equal(new Set(data.destinations.map(d=>d.id)).size,3212);
 assert.equal(data.provinces.length,34);
-assert.equal(data.destinations.filter(d=>d.coverage==='detailed').length,20);
-assert.equal(guides.reduce((n,c)=>n+c.places.length,0),800);
-assert.equal(guides.reduce((n,c)=>n+c.foods.length,0),600);
+assert.equal(data.destinations.filter(d=>d.coverage==='detailed').length,28);
+assert.equal(guides.reduce((n,c)=>n+c.places.length,0),1120);
+assert.equal(guides.reduce((n,c)=>n+c.foods.length,0),840);
 for(const d of data.destinations){assert.match(d.travelUrl,/^https:\/\//);assert.equal(typeof d.pinyin,'string');if(d.coverage==='detailed')assert(guides.some(g=>g.id===d.guideId))}
 for(const [id,name] of [['luoyang','洛阳博物馆'],['chengdu','金沙遗址博物馆'],['guangzhou','长隆水上乐园']])assert(guides.find(c=>c.id===id).places.find(p=>p.name===name).visit.availability);
 function node(){return {innerHTML:'',textContent:'',value:'',isConnected:true,classList:{add(){}},querySelector(){return null},closest(){return {scrollTo(){}}},scrollIntoView(){},insertAdjacentHTML(where,html){this.innerHTML+=html}}}
@@ -24,7 +24,7 @@ const {context:c,nodes,root}=runtime(true),M=c.NationalTravel.model;
 const state={scope:'cities',query:'',province:'',region:'',parent:''};
 assert.equal(M.filter(state).length,361);
 assert.equal(M.filter({...state,scope:'county'}).length,2851);
-assert.equal(M.filter({...state,scope:'guides'}).length,20);
+assert.equal(M.filter({...state,scope:'guides'}).length,28);
 for(const q of ['哈尔滨','丽江','大理','阿勒泰','敦煌','凤凰','婺源','香港','澳門','臺北','aletai','haerbin'])assert(M.search(q).length>0,q);
 assert.equal(M.search('大理').filter(d=>d.shortName==='大理').length,2);
 c.NationalTravel.query('敦煌');assert(nodes.get('national-results').innerHTML.includes('敦煌市'));

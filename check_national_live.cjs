@@ -21,9 +21,9 @@ async function get(path){return fetch(base+path+(path.includes('?')?'&':'?')+'ve
   assert.equal(hash(text),hash(fs.readFileSync('dist/'+path,'utf8')),path+' differs from build');
  }
  const index=await get('index.html?v=20261027b');assert.equal(index.status,200);
- const html=await index.text();assert(html.includes('national-integration.js?v=20261029n1'));assert(html.includes('national-data.js?v=20261029n1'));
+ const html=await index.text();assert(html.includes('national-integration.js?v=20261030h8'));assert(html.includes('national-data.js?v=20261030h8'));
  const guide=await get('city-data.js');assert.equal(guide.status,200);
  assert.equal(hash(await guide.text()),expected.guideSha256);
  const html2=await get('travel/index.html');assert.equal(html2.status,200);assert((await html2.text()).includes('national-integration.js'));
- console.log('NATIONAL_LIVE_HTTP_VERIFIED: original URL, nationwide directory, 3212 destinations, 20 unchanged guides, JS/CSS bytes and /travel/ entry verified.');
+ console.log('NATIONAL_LIVE_HTTP_VERIFIED: original URL, nationwide directory, 3212 destinations, 28 guides with original 20 unchanged, JS/CSS bytes and /travel/ entry verified.');
 })().catch(e=>{console.error('NATIONAL_LIVE_CHECK_FAILED',e);process.exitCode=1});

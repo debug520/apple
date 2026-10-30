@@ -14,9 +14,12 @@ def dump(value):
 guide_file = DIST / 'city-data.js'
 guide_bytes = guide_file.read_bytes()
 guides = json.loads(guide_bytes.decode()[len('window.DATA='):].rstrip(';\n'))
-assert len(guides) == 20
-assert sum(len(c['places']) for c in guides) == 800
-assert sum(len(c['foods']) for c in guides) == 600
+assert len(guides) == 28
+assert sum(len(c['places']) for c in guides) == 1120
+assert sum(len(c['foods']) for c in guides) == 840
+
+hot_report = read('dist/hot-validation.json')
+assert hot_report['original20Unchanged']
 
 base, regional, scenic = (read(f) for f in ('national-directory.json', 'regional-travel-sources.json', 'national-scenic.json'))
 provinces = copy.deepcopy(regional['provinces'])
@@ -48,12 +51,12 @@ for r in rows:
 
 # Retain old city IDs and item indexes. The directory only links to those guides.
 for c in guides:
-    matches = [r for r in rows if r['level'] in ('prefecture', 'municipality') and
-               (r['shortName'] == c['name'] or r['name'] == c['name'] or r['name'] == c['name']+'市')]
+    matches = ([r for r in rows if r['code']==c['adminCode']] if c.get('adminCode') else [r for r in rows if r['level'] in ('prefecture','municipality') and (r['shortName']==c['name'] or r['name']==c['name'] or r['name']==c['name']+'市')])
     assert len(matches) == 1, (c['id'], c['name'], len(matches))
     r = matches[0]
     r.update(coverage='detailed', guideId=c['id'], guidePlaces=len(c['places']), guideFoods=len(c['foods']))
-assert sum(r['coverage']=='detailed' for r in rows) == 20
+    if c.get('hotAddedAt'):r['guideAddedAt']=c['hotAddedAt']
+assert sum(r['coverage']=='detailed' for r in rows) == 28
 
 # Keep the entire official list, including entries whose city cannot be established
 # from the official name. Such entries remain in a clearly labelled provincial pool.
@@ -94,9 +97,9 @@ assert 'cn-500105' not in ids and 'cn-500112' not in ids
 assert guide_file.read_bytes() == guide_bytes
 
 payload = {
-    'version':'20261029-national1',
+    'version':'20261030-hot8',
     'checkedAt':'2026-10-29',
-    'counts':{'destinations':len(rows),'cityLevel':361,'countyLevel':2851,'detailedGuides':20,'guidePlaces':800,'guideFoods':600,'scenicRows':359},
+    'counts':{'destinations':len(rows),'cityLevel':361,'countyLevel':2851,'detailedGuides':28,'guidePlaces':1120,'guideFoods':840,'scenicRows':359},
     'provinces':provinces, 'destinations':rows, 'scenic':items,
     'scenicMetadata':scenic['metadata'],
     'directoryMetadata':base['metadata'],
@@ -105,6 +108,6 @@ payload = {
 (DIST/'national-data.js').write_text('window.NATIONAL='+dump(payload)+';')
 report = {**payload['counts'], 'assignedScenicRows':len(items)-len(unassigned),
           'unassignedScenicRows':len(unassigned), 'guideSha256':hashlib.sha256(guide_bytes).hexdigest(),
-          'existingGuidesUnchanged':True, 'checkedAt':payload['checkedAt'], 'version':payload['version']}
+          'existingGuidesUnchanged':hot_report['original20Unchanged'], 'original20Sha256':hot_report['original20Sha256'], 'checkedAt':payload['checkedAt'], 'version':payload['version']}
 (DIST/'national-validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2))
 print('NATIONAL_DIRECTORY_VALIDATED '+dump(report))

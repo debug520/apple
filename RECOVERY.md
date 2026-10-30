@@ -1,0 +1,1 @@
+2026-10-30: recovered 8 complete guides (40 places/30 foods each) and original attributed image batches. Guilin/Sanya final data and later image supplements were not backed up and are not included. Original 20 guides and item indexes remain unchanged. Unknown prices and reservation policies remain unknown.
