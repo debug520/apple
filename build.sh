@@ -9,7 +9,7 @@ python3 check_catalog.py
 python3 enrich_hot.py
 python3 prepare_national.py
 python3 prepare_atlas.py
-cp national-model.js national-ui.js national-integration.js national.css destinations.html hot-ui.js atlas-ui.js atlas.css dist/
+cp national-model.js national-ui.js national-integration.js national.css destinations.html hot-ui.js atlas-ui.js atlas.css explorer-model.js explorer-ui.js explorer-map.js explorer.css dist/
 python3 - <<'PY'
 from pathlib import Path
 p=Path('dist/travel.html')
@@ -31,6 +31,8 @@ b=Path('dist/basic.js')
 b.write_text('\n'.join(line for line in b.read_text().splitlines() if not line.startswith('const basicMine=minePage;'))+'\n')
 s=s.replace('<head>','<head><script>if(!new URL(location.href).searchParams.get("destination")){document.documentElement.classList.add("atlasBoot");document.addEventListener("DOMContentLoaded",()=>document.documentElement.classList.remove("atlasBoot"),{once:true})}</script>')
 s=s.replace('</head>','<link rel="stylesheet" href="atlas.css?v=20261030m2"></head>').replace('</body>','<script src="atlas-data.js?v=20261030m2"></script><script src="atlas-ui.js?v=20261030m2"></script></body>')
+s=s.replace('</head>','<link rel="stylesheet" href="vendor-map/ol.css"><link rel="stylesheet" href="explorer.css?v=20261030e1"></head>').replace('</body>','<script src="vendor-map/ol.js"></script><script src="vendor-map/olms.js"></script><script src="explorer-map.js?v=20261030e1"></script><script src="explorer-centres.js?v=20261030e1"></script><script src="explorer-model.js?v=20261030e1"></script><script src="explorer-ui.js?v=20261030e1"></script></body>')
+Path('dist/explorer-centres.js').write_text('window.EXPLORER_CENTRES='+Path('map-source/centres.json').read_text()+';')
 p.write_text(s)
 Path('dist/index.html').write_text(s)
 Path('dist/travel').mkdir(exist_ok=True)
@@ -43,3 +45,6 @@ node check_hot.cjs
 
 node --check dist/atlas-ui.js
 node check_atlas.cjs
+
+node --check dist/explorer-ui.js
+node check_explorer.cjs
