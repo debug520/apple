@@ -25,7 +25,7 @@ for f in features:
  centres[str(prop['adcode'])]=project(prop['center'])
 for code,point in json.loads((D/'centres.json').read_text()).items():centres[code]=project(point)
 # Retain only compact reference centres from drill-down source files.
-payload={'version':'20261030-map1','source':'https://datav.aliyun.com/portal/school/atlas/area_selector','dataSource':'https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json','checkedAt':'2026-10-30','provinces':provinces,'seaPath':path(islands,sea),'centres':centres}
+payload={'version':'20261030-map2','source':'https://datav.aliyun.com/portal/school/atlas/area_selector','dataSource':'https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json','checkedAt':'2026-10-30','provinces':provinces,'seaPath':path(islands,sea),'centres':centres}
 assert len(provinces)==34 and len({p['code']for p in provinces})==34
 (R/'dist/atlas-data.js').write_text('window.CHENGJI_ATLAS='+json.dumps(payload,ensure_ascii=False,separators=(',',':'))+';')
 print('ATLAS_GEOMETRY_VALIDATED: 34 provinces, island inset and reference centres')
