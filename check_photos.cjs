@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const ctx={};ctx.window=ctx;vm.createContext(ctx);
+const ctx={URL};ctx.window=ctx;vm.createContext(ctx);
 for(const name of ['city-data.js','photos.js','real-photos.js','enriched-photos.js','leisure-photos.js','catalog-photos.js','hot-photos.js'])vm.runInContext(fs.readFileSync('dist/'+name,'utf8'),ctx);
 const app=fs.readFileSync('dist/app.js','utf8');
 vm.runInContext(app.split('\n').find(line=>line.startsWith('const imageFor=')),ctx);
@@ -17,5 +17,12 @@ assert(html.indexOf('verified-photos.js')>html.indexOf('hot-photos.js'));
 assert(html.indexOf('verified-photos.js')<html.indexOf('app.js?'));
 assert(html.includes('photo-ui.css')&&html.includes('photo-ui.js'));
 assert(app.includes('window.verifiedPhotoCredit?.(file)'));
+ctx.document={addEventListener(){}};
+vm.runInContext('const esc=value=>String(value??\'\').replace(/[&<>"\']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\\"":"&quot;","\'":"&#39;"}[c]));',ctx);
+vm.runInContext(fs.readFileSync('dist/photo-ui.js','utf8'),ctx);
+vm.runInContext(app.split('\n').find(line=>line.startsWith('function photoCredit(')),ctx);
+vm.runInContext(fs.readFileSync('dist/discovery-ui.js','utf8').split('\n').find(line=>line.startsWith('const discoveryPhotoCredit=')),ctx);
+vm.runInContext(fs.readFileSync('dist/hot-ui.js','utf8').split('\n').find(line=>line.includes('const previousCredit=photoCredit;')),ctx);
+for(const photo of manifest.items){const credit=vm.runInContext('photoCredit('+JSON.stringify(photo.file)+')',ctx);assert(credit.includes('href="'+photo.licenseUrl+'"'),photo.key+' must retain a clickable license after all UI wrappers');}
 const report={totalRecords:after.length,photosBefore:before.filter(r=>r.file).length,photosAfter:after.filter(r=>r.file).length,added:manifest.items.length,remainingWithoutPhoto:after.filter(r=>!r.file).length,previousPhotosUnchanged:true,allLocalFilesPresent:true};
 fs.writeFileSync('dist/photo-coverage.json',JSON.stringify(report,null,2));console.log('PHOTO_COVERAGE_CHECKS_PASSED '+JSON.stringify(report));

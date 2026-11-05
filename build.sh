@@ -35,7 +35,7 @@ s=s.replace('<head>','<head><script>if(!new URL(location.href).searchParams.get(
 s=s.replace('</head>','<link rel="stylesheet" href="atlas.css?v=20261030m2"></head>').replace('</body>','<script src="atlas-data.js?v=20261030m2"></script><script src="atlas-ui.js?v=20261030m2"></script></body>')
 s=s.replace('</head>','<link rel="stylesheet" href="vendor-map/ol.css"><link rel="stylesheet" href="explorer.css?v=20261031e3"></head>').replace('</body>','<script src="vendor-map/ol.js"></script><script src="vendor-map/olms.js"></script><script src="explorer-map.js?v=20261031e3"></script><script src="explorer-centres.js?v=20261031e3"></script><script src="explorer-model.js?v=20261031e3"></script><script src="explorer-ui.js?v=20261031e3"></script></body>')
 s=s.replace('<script src="app.js">','<script src="verified-photos.js?v=20261105p1"></script><script src="photo-ui.js?v=20261105p1"></script><script src="app.js?v=20261105p1">')
-s=s.replace('</head>','<link rel="stylesheet" href="photo-ui.css?v=20261105p1"></head>').replace('explorer-ui.js?v=20261031e3','explorer-ui.js?v=20261105p1')
+s=s.replace('</head>','<link rel="stylesheet" href="photo-ui.css?v=20261105p1"></head>').replace('explorer-ui.js?v=20261031e3','explorer-ui.js?v=20261105p1').replace('discovery-ui.js?v=20261029c','discovery-ui.js?v=20261105p2')
 Path('dist/explorer-centres.js').write_text('window.EXPLORER_CENTRES='+Path('map-source/centres.json').read_text()+';')
 p.write_text(s)
 Path('dist/index.html').write_text(s)
