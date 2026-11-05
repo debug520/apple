@@ -3,3 +3,16 @@
 .cover>.photo-unavailable,.detailHero>.photo-unavailable,.me-gallery figure>.photo-unavailable,.hero>.photo-unavailable,.cityTile>.photo-unavailable{width:100%;height:100%}
 .me-list-row>.photo-unavailable small{font-size:8px}.me-rec-card>.photo-unavailable small{font-size:9px}
 .me-gallery img{object-fit:contain;background:#edf1e8}
+.me-photo-open{display:block;position:relative;width:100%;height:100%;border:0;padding:0;background:#edf1e8;cursor:zoom-in}
+.me-photo-open img,.me-photo-open>.photo-unavailable{width:100%;height:100%}
+.me-photo-open>span:not(.photo-unavailable){position:absolute;right:14px;bottom:37px;padding:6px 10px;border-radius:20px;background:#132b25b8;color:#fff;font-size:11px;pointer-events:none}
+.me-photo-open:focus-visible{outline:3px solid #cb9b48;outline-offset:-4px}
+.photo-viewer{box-sizing:border-box;width:min(1000px,94vw);max-width:94vw;max-height:92dvh;padding:0;border:0;border-radius:18px;color:#f2f4ef;background:#192720;box-shadow:0 18px 90px #0008}
+.photo-viewer::backdrop{background:#0c1713d9}
+.photo-viewer header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 20px}
+.photo-viewer h2{margin:0;font-size:16px;line-height:1.5}.photo-viewer button{padding:9px 14px;border:1px solid #758a7d;border-radius:12px;background:#304438;color:#fff;cursor:pointer}.photo-viewer button:disabled{opacity:.35;cursor:default}
+.photo-viewer-stage{display:flex;align-items:center;justify-content:center;min-height:160px;background:#101a15}
+.photo-viewer-image{display:block;max-width:100%;width:auto;height:auto;max-height:62dvh;object-fit:contain}.photo-viewer [hidden]{display:none}
+.photo-viewer nav{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 20px;font-size:11px;color:#bccbbf}
+.photo-viewer-source{padding:0 20px 15px;overflow-wrap:anywhere}.photo-viewer-source .source{font-size:11px;color:#bccbbf;line-height:1.7;margin:0}.photo-viewer-source a{color:#c4dfbb}
+@media(max-width:600px){.photo-viewer{width:96vw;max-width:96vw}.photo-viewer header,.photo-viewer nav{padding:12px}.photo-viewer h2{font-size:14px}.photo-viewer nav span{max-width:95px;text-align:center}.photo-viewer-image{max-height:58dvh}.photo-viewer-source{padding:0 12px 12px}}
