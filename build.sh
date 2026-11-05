@@ -9,6 +9,8 @@ python3 check_catalog.py
 python3 enrich_hot.py
 python3 prepare_national.py
 python3 prepare_atlas.py
+python3 prepare_verified_photos.py
+cp photo-ui.js photo-ui.css dist/
 cp national-model.js national-ui.js national-integration.js national.css destinations.html hot-ui.js atlas-ui.js atlas.css explorer-model.js explorer-ui.js explorer-map.js explorer.css dist/
 python3 - <<'PY'
 from pathlib import Path
@@ -32,6 +34,8 @@ b.write_text('\n'.join(line for line in b.read_text().splitlines() if not line.s
 s=s.replace('<head>','<head><script>if(!new URL(location.href).searchParams.get("destination")){document.documentElement.classList.add("atlasBoot");document.addEventListener("DOMContentLoaded",()=>document.documentElement.classList.remove("atlasBoot"),{once:true})}</script>')
 s=s.replace('</head>','<link rel="stylesheet" href="atlas.css?v=20261030m2"></head>').replace('</body>','<script src="atlas-data.js?v=20261030m2"></script><script src="atlas-ui.js?v=20261030m2"></script></body>')
 s=s.replace('</head>','<link rel="stylesheet" href="vendor-map/ol.css"><link rel="stylesheet" href="explorer.css?v=20261031e3"></head>').replace('</body>','<script src="vendor-map/ol.js"></script><script src="vendor-map/olms.js"></script><script src="explorer-map.js?v=20261031e3"></script><script src="explorer-centres.js?v=20261031e3"></script><script src="explorer-model.js?v=20261031e3"></script><script src="explorer-ui.js?v=20261031e3"></script></body>')
+s=s.replace('<script src="app.js">','<script src="verified-photos.js?v=20261105p1"></script><script src="photo-ui.js?v=20261105p1"></script><script src="app.js?v=20261105p1">')
+s=s.replace('</head>','<link rel="stylesheet" href="photo-ui.css?v=20261105p1"></head>').replace('explorer-ui.js?v=20261031e3','explorer-ui.js?v=20261105p1')
 Path('dist/explorer-centres.js').write_text('window.EXPLORER_CENTRES='+Path('map-source/centres.json').read_text()+';')
 p.write_text(s)
 Path('dist/index.html').write_text(s)
@@ -47,4 +51,7 @@ node --check dist/atlas-ui.js
 node check_atlas.cjs
 
 node --check dist/explorer-ui.js
+node --check dist/photo-ui.js
+node --check dist/verified-photos.js
 node check_explorer.cjs
+node check_photos.cjs

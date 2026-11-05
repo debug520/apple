@@ -1,0 +1,4 @@
+.photo-unavailable{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:#edf1e8;color:#7b8c72;overflow:hidden;min-width:0}
+.photo-unavailable b{font-size:26px;font-weight:400}.photo-unavailable small{font-size:10px;text-align:center;line-height:1.5;padding:0 5px}
+.cover>.photo-unavailable,.detailHero>.photo-unavailable,.me-gallery figure>.photo-unavailable,.hero>.photo-unavailable,.cityTile>.photo-unavailable{width:100%;height:100%}
+.me-list-row>.photo-unavailable small{font-size:8px}.me-rec-card>.photo-unavailable small{font-size:9px}
