@@ -26,3 +26,5 @@ vm.runInContext(fs.readFileSync('dist/hot-ui.js','utf8').split('\n').find(line=>
 for(const photo of manifest.items){const credit=vm.runInContext('photoCredit('+JSON.stringify(photo.file)+')',ctx);assert(credit.includes('href="'+photo.licenseUrl+'"'),photo.key+' must retain a clickable license after all UI wrappers');}
 const report={totalRecords:after.length,photosBefore:before.filter(r=>r.file).length,photosAfter:after.filter(r=>r.file).length,added:manifest.items.length,remainingWithoutPhoto:after.filter(r=>!r.file).length,previousPhotosUnchanged:true,allLocalFilesPresent:true};
 fs.writeFileSync('dist/photo-coverage.json',JSON.stringify(report,null,2));console.log('PHOTO_COVERAGE_CHECKS_PASSED '+JSON.stringify(report));
+
+for(const name of ['verified-photos.js','photo-ui.js','photo-ui.css','explorer-model.js','explorer-ui.js']){const hash=require('node:crypto').createHash('sha256').update(fs.readFileSync('dist/'+name)).digest('hex').slice(0,12);const path='release-assets/'+hash+'/'+name;assert(html.includes(path),name+' must use a content version in its path');assert(fs.readFileSync('dist/'+path).equals(fs.readFileSync('dist/'+name)));}

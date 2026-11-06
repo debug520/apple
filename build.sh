@@ -14,6 +14,7 @@ cp photo-ui.js photo-ui.css dist/
 cp national-model.js national-ui.js national-integration.js national.css destinations.html hot-ui.js atlas-ui.js atlas.css explorer-model.js explorer-ui.js explorer-map.js explorer.css dist/
 python3 - <<'PY'
 from pathlib import Path
+import hashlib,re
 p=Path('dist/travel.html')
 s=p.read_text().replace('<script src="app.js">','<script src="enriched-photos.js?v=20261027"></script><script src="app.js">')
 s=s.replace('</body>','<script src="expansion-ui.js"></script><script src="catalog-ui.js?v=20261027"></script></body>').replace('浏览十座城市','浏览二十座城市')
@@ -37,6 +38,14 @@ s=s.replace('</head>','<link rel="stylesheet" href="vendor-map/ol.css"><link rel
 s=s.replace('<script src="app.js">','<script src="verified-photos.js?v=20261105p4"></script><script src="photo-ui.js?v=20261105p4"></script><script src="app.js?v=20261105p1">')
 s=s.replace('</head>','<link rel="stylesheet" href="photo-ui.css?v=20261105p4"></head>').replace('explorer-ui.js?v=20261031e3','explorer-ui.js?v=20261105p4').replace('explorer-model.js?v=20261031e3','explorer-model.js?v=20261105p4').replace('discovery-ui.js?v=20261029c','discovery-ui.js?v=20261105p2')
 Path('dist/explorer-centres.js').write_text('window.EXPLORER_CENTRES='+Path('map-source/centres.json').read_text()+';')
+# A content hash in the path avoids CDN caches that ignore query parameters.
+for name in ['verified-photos.js','photo-ui.js','photo-ui.css','explorer-model.js','explorer-ui.js']:
+    content=Path('dist',name).read_bytes()
+    relative='release-assets/'+hashlib.sha256(content).hexdigest()[:12]+'/'+name
+    target=Path('dist',relative)
+    target.parent.mkdir(parents=True,exist_ok=True)
+    target.write_bytes(content)
+    s=re.sub(r'(src|href)="'+re.escape(name)+r'(?:\?[^"]*)?"',lambda match:match.group(1)+'="'+relative+'"',s)
 p.write_text(s)
 Path('dist/index.html').write_text(s)
 Path('dist/travel').mkdir(exist_ok=True)
