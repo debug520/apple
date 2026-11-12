@@ -32,6 +32,6 @@ needle = 'function photoCredit(file){'
 assert source.count(needle) == 1
 source = source.replace(needle, needle + "const verified=window.verifiedPhotoCredit?.(file);if(verified)return verified;")
 app.write_text(source)
-report = {'version': '20261105-photos1', 'addedPhotoRecords': len(entries), 'places': sum(r['type'] == 'places' for r in entries.values()), 'foods': sum(r['type'] == 'foods' for r in entries.values()), 'guideSha256': hashlib.sha256((DIST / 'city-data.js').read_bytes()).hexdigest(), 'sourceAndLicensePresent': True, 'allAssetsVerified': True}
+report = {'version': '20261112-photos-recovery', 'addedPhotoRecords': len(entries), 'places': sum(r['type'] == 'places' for r in entries.values()), 'foods': sum(r['type'] == 'foods' for r in entries.values()), 'guideSha256': hashlib.sha256((DIST / 'city-data.js').read_bytes()).hexdigest(), 'sourceAndLicensePresent': True, 'allAssetsVerified': True}
 (DIST / 'verified-photo-validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2))
 print('VERIFIED_PHOTOS_VALIDATED ' + json.dumps(report, ensure_ascii=False))

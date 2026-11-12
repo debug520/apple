@@ -6,7 +6,7 @@
   const p = Object.values(REAL_PHOTOS).find(r => r.file === file && r.artist && r.license);
   if (!p || !safe(p.source)) return '';
   const link = (url, label) => safe(url) ? `<a href="${escape(safe(url))}" target="_blank" rel="noopener">${escape(label)}</a>` : escape(label);
-  return `<p class="source">照片：${escape(p.artist)} · ${link(p.source, p.sourceTitle || '文件说明')} · ${link(p.licenseUrl, p.license)}${safe(p.originalImage) ? ' · ' + link(p.originalImage, '来源原图') : ''}。已等比缩放与压缩。${p.scope === 'dish-reference' ? '菜品资料照片，不代表指定门店出品。' : '地点资料照片，非当日实况。'}</p>`;
+  return `<p class="source">${p.photoCaption ? `<strong>${escape(p.photoCaption)}</strong><br>` : ''}照片：${escape(p.artist)} · ${link(p.source, p.sourceTitle || '文件说明')} · ${link(p.licenseUrl, p.license)}${safe(p.originalImage) ? ' · ' + link(p.originalImage, '来源原图') : ''}。已等比缩放与压缩。${p.scope === 'dish-reference' ? '菜品资料照片，不代表指定门店出品。' : '地点资料照片，非当日实况。'}</p>`;
  };
  let viewer, gallery = [], current = 0, opener;
  function showPhoto() {
