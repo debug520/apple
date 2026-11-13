@@ -22,7 +22,7 @@
  function createViewer() {
   viewer = document.createElement('dialog'); viewer.className = 'photo-viewer';
   viewer.setAttribute('aria-labelledby', 'photo-viewer-title');
-  viewer.innerHTML = '<header><h2 id="photo-viewer-title"></h2><button data-photo-close aria-label="关闭照片预览" autofocus>×</button></header><div class="photo-viewer-stage"><img class="photo-viewer-image"><p class="photo-viewer-error" hidden>照片暂时无法加载，请关闭后重试。</p></div><nav aria-label="切换照片"><button data-photo-prev>← 上一张</button><span>资料照片 · 非当日实况</span><button data-photo-next>下一张 →</button></nav><div class="photo-viewer-source"></div>';
+  viewer.innerHTML = `<header><h2 id="photo-viewer-title"></h2><button data-photo-close aria-label="关闭照片预览" autofocus>${window.ChengjiIcons.svg('close')}</button></header><div class="photo-viewer-stage"><img class="photo-viewer-image"><p class="photo-viewer-error" hidden>照片暂时无法加载，请关闭后重试。</p></div><nav aria-label="切换照片"><button data-photo-prev>${window.ChengjiIcons.svg('chevron-left')} 上一张</button><span>资料照片 · 非当日实况</span><button data-photo-next>下一张 ${window.ChengjiIcons.svg('chevron-right')}</button></nav><div class="photo-viewer-source"></div>`;
   viewer.addEventListener('click', e => {
    if (e.target === viewer || e.target.closest('[data-photo-close]')) viewer.close();
    else if (e.target.closest('[data-photo-prev]') && current > 0) { current--; showPhoto(); }
@@ -51,7 +51,7 @@
   placeholder.className = img.className + ' photo-unavailable' + (img.closest('.me-root') ? ' me-image-placeholder' : '');
   placeholder.setAttribute('role', 'img');
   placeholder.setAttribute('aria-label', (img.alt || '资料照片') + '暂时无法加载');
-  const mark = document.createElement('b'); mark.textContent = '▧'; mark.setAttribute('aria-hidden', 'true');
+  const mark = document.createElement('b'); mark.innerHTML = window.ChengjiIcons.svg('image'); mark.setAttribute('aria-hidden', 'true');
   const caption = document.createElement('small'); caption.textContent = '照片暂时无法加载';
   placeholder.append(mark, caption);
   img.replaceWith(placeholder);

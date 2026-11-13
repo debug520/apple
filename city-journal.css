@@ -127,3 +127,22 @@ body.meMode .sheet p{color:#7d887e}.me-menu-grid button{background:#eff1e9;borde
 @media(prefers-reduced-motion:reduce){.me-root button,.me-drawer{transition:none!important}.me-list-row:hover{transform:none}}
 
 .me-actionbar .me-icon{width:19px;height:19px;flex-basis:19px}.me-actionbar .is-saved{color:#bd6b49}.me-actionbar .is-saved .me-icon{fill:currentColor}.me-menu-grid .me-icon{width:22px;height:22px;flex-basis:22px}
+
+/* A single, lighter icon family across map, search, empty states and photo controls. */
+.me-filters .me-icon{width:18px;height:18px;flex-basis:18px}.me-filters button{gap:6px}
+.me-image-placeholder b .me-icon,.photo-unavailable b .me-icon{width:27px;height:27px;display:block}
+.me-hero-placeholder b .me-icon{width:48px;height:48px}
+.me-suggestions button>span .me-icon{width:19px;height:19px;display:block}
+.me-list-head>button .me-icon{width:18px;height:18px}
+.me-close-card{display:grid;place-items:center}.me-close-card .me-icon{width:17px;height:17px}
+.me-weather-icon .me-icon{width:42px;height:42px}.me-hourly b .me-icon{width:22px;height:22px}.me-daily b .me-icon{width:18px;height:18px}
+.photo-viewer button{display:inline-flex;gap:7px;align-items:center;justify-content:center;min-height:38px}
+.photo-viewer [data-photo-close]{width:35px;height:35px;min-height:35px;padding:7px;border:0;background:transparent;border-radius:50%}
+.photo-viewer [data-photo-close]:hover{background:#ffffff14}.photo-viewer button .me-icon{width:18px;height:18px;flex-basis:18px}
+@media(max-width:360px){.me-filters .me-icon{width:15px;height:15px;flex-basis:15px}.me-filters button{gap:3px}}
+
+.me-city{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:3px}.me-city .me-icon{width:12px;height:12px;flex-basis:12px}
+.me-list-caption button,.me-title-line button,.me-applied-filters button,.me-trip-stop-actions button{display:inline-flex;align-items:center;justify-content:center;gap:4px}
+.me-list-caption .me-icon,.me-title-line .me-icon,.me-applied-filters .me-icon,.me-trip-stop-actions .me-icon{width:13px;height:13px;flex-basis:13px}
+.me-title-line button{display:none}@media(max-width:979px){.me-title-line button{display:inline-flex}}
+.me-photo-open>span{display:inline-flex;align-items:center;gap:5px}.me-photo-open>span .me-icon{width:12px;height:12px;flex-basis:12px}
