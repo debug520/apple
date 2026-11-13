@@ -1,6 +1,6 @@
 'use strict';
 (function(root){
- const categories={food:{label:'美食',icon:'food',color:'#d2854b'},scenic:{label:'美景',icon:'scenic',color:'#578c77'},park:{label:'公园',icon:'park',color:'#79a66b'},museum:{label:'博物馆',icon:'museum',color:'#8b83b2'}};
+ const categories={food:{label:'美食',icon:'food',color:'#bd6b49'},scenic:{label:'美景',icon:'scenic',color:'#284b62'},park:{label:'公园',icon:'park',color:'#67806a'},museum:{label:'博物馆',icon:'museum',color:'#837495'}};
  function category(p,t){if(t==='foods'||['restaurant','cafe','fast_food'].includes(p.amenity))return 'food';if(/博物|展馆|美术馆|纪念馆/.test([p.category,p.group,p.name].filter(Boolean).join(' '))||p.tourism==='museum')return 'museum';if(/公园|湿地|植物园/.test(p.name)||p.leisure==='park')return 'park';return 'scenic';}
  function coordinates(p){return Number.isFinite(p.lng)&&Number.isFinite(p.lat)&&Math.abs(p.lng)<=180&&Math.abs(p.lat)<=85?[p.lng,p.lat]:null;}
  function distance(a,b){if(!a||!b)return null;const r=Math.PI/180,dlat=(b[1]-a[1])*r,dlng=(b[0]-a[0])*r;const h=Math.sin(dlat/2)**2+Math.cos(a[1]*r)*Math.cos(b[1]*r)*Math.sin(dlng/2)**2;return 6371*2*Math.atan2(Math.sqrt(h),Math.sqrt(Math.max(0,1-h)));}
