@@ -11,8 +11,8 @@ def asset(name,text):
     p=out/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text);return '/'+path
 (out/'licenses').mkdir(exist_ok=True)
 (out/'licenses/web-vitals.txt').write_bytes(Path('WEB-VITALS-LICENSE.txt').read_bytes())
-css=asset('guide-pages.css',Path('guide-pages.css').read_text())
-metrics=asset('vitals.js',Path('web-vitals.iife.js').read_text()+'\n;\n'+Path('vitals-monitor.js').read_text())
+css=asset('guide-pages.css',Path('guide-pages.css').read_text()+'\n'+Path('progressive-photos.css').read_text())
+metrics=asset('vitals.js',Path('web-vitals.iife.js').read_text()+'\n;\n'+Path('vitals-monitor.js').read_text()+'\n;\n'+Path('progressive-photos.js').read_text()+'\n;\n'+Path('sw-client.js').read_text())
 def city_path(c):return '/cities/'+c['id']+'/'
 def item_path(c,kind,i):return city_path(c)+kind+'/'+str(i)+'/'
 def map_link(c,p=None):return '/index.html?'+urlencode({'destination':c['id'],**({'item':p['key']} if p else {})})
@@ -24,7 +24,8 @@ def photo(p,hero=False):
     if not v:return ''
     size=v['detail' if hero else 'card']
     attrs=' fetchpriority="high"' if hero else ' loading="lazy"'
-    return '<img src="/'+size['src']+'" width="'+str(size['width'])+'" height="'+str(size['height'])+'" decoding="async"'+attrs+' alt="'+E(p['name']+'资料照片',quote=True)+'">'
+    return '<span class="cj-photo-frame" style="--cj-preview:url(\''+size['preview']+'\');--cj-photo-ratio:'+str(size['width'])+'/'+str(size['height'])+'"><img class="cj-photo-loading" data-photo-original="/'+E(file,quote=True)+'" data-photo-preview="'+size['preview']+'" src="/'+size['src']+'" width="'+str(size['width'])+'" height="'+str(size['height'])+'" decoding="async"'+attrs+' alt="'+E(p['name']+'资料照片',quote=True)+'"></span>'
+
 def breadcrumb(items):return '<nav class="breadcrumbs" aria-label="面包屑">'+'<span aria-hidden="true"> / </span>'.join('<a href="'+E(path,quote=True)+'">'+E(name)+'</a>' for name,path in items)+'</nav>'
 def crumb_json(items):return {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':i+1,'name':name,'item':origin+path} for i,(name,path) in enumerate(items)]}
 def page(path,title,desc,body,graph):

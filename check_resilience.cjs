@@ -1,0 +1,28 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+(async()=>{
+ const photoCode=fs.readFileSync('progressive-photos.js','utf8'),photo={window:null,document:{documentElement:{classList:{add(){}}},addEventListener(){}}};photo.window=photo;vm.createContext(photo);vm.runInContext(photoCode,photo);
+ const classes=new Set(['cj-photo-loading']),img={dataset:{photoOriginal:'/original.jpg',photoPreview:'data:image/webp;base64,preview'},src:'/broken.webp',matches:()=>true,classList:{add(x){classes.add(x)},remove(x){classes.delete(x)},toggle(x,on){if(on)classes.add(x);else classes.delete(x)}}};
+ photo.ChengjiPhotoRecovery.recover(img);assert.equal(img.src,'/original.jpg');photo.ChengjiPhotoRecovery.recover(img);assert.equal(img.src,img.dataset.photoPreview);photo.ChengjiPhotoRecovery.loaded(img);assert(classes.has('cj-photo-lowres'));assert(!classes.has('cj-photo-loading'));
+ const code=fs.readFileSync('dist/sw.js','utf8'),origin='https://test.chengji.example',handlers={},stores=new Map(),requests=[];let offline=false;
+ const key=x=>new URL(typeof x==='string'?x:x.url,origin).href;
+ const caches={async open(name){if(!stores.has(name))stores.set(name,new Map());const store=stores.get(name);return {async put(k,r){store.set(key(k),r.clone())},async match(k){return store.get(key(k))?.clone()},async keys(){return [...store.keys()].map(url=>({url}))},async delete(k){return store.delete(key(k))}}},async keys(){return [...stores.keys()]},async delete(name){return stores.delete(name)}};
+ const context={URL,Response,Request,Promise,setTimeout(){return 0},caches,self:{location:{origin},clients:{async claim(){}},addEventListener(name,fn){handlers[name]=fn}},async fetch(r){const url=key(r);requests.push(url);if(offline)throw Error('offline');return new Response(url.endsWith('/offline.html')?'OFFLINE FALLBACK':'PUBLIC '+url,{status:200,headers:{'Content-Type':'text/html'}})}};
+ vm.createContext(context);vm.runInContext(code,context);
+ const life=name=>{const jobs=[];handlers[name]({waitUntil:p=>jobs.push(p)});return Promise.all(jobs)};
+ await life('install');stores.set('unrelated-notes',new Map());stores.set('chengji-public-previous-core',new Map());await life('activate');assert(stores.has('unrelated-notes'));assert(!stores.has('chengji-public-previous-core'));
+ const dispatch=async(path,options={})=>{let response;const jobs=[],request={url:new URL(path,origin).href,method:'GET',mode:'navigate',...options};handlers.fetch({request,respondWith(p){response=p},waitUntil(p){jobs.push(p)}});if(response===undefined)return null;const result=await response;await Promise.all(jobs);return result;};
+ assert((await (await dispatch('/cities/beijing/')).text()).includes('/cities/beijing/'));
+ offline=true;assert((await (await dispatch('/cities/beijing/')).text()).includes('/cities/beijing/'),'visited city must remain available offline');
+ assert.equal(await (await dispatch('/cities/not-visited/')).text(),'OFFLINE FALLBACK','uncached city must not pretend to be another cached city');
+ assert((await (await dispatch('/index.html?destination=beijing')).text()).includes('/index.html'),'cached shell retains map URL city selection');
+ assert.equal(await dispatch('/api/personal-notes'),null);assert.equal(await dispatch('https://api.open-meteo.com/v1/forecast'),null);assert.equal(await dispatch('/cities/beijing/',{method:'POST'}),null);
+ offline=false;for(let n=0;n<45;n++)await dispatch('/cities/beijing/places/'+n+'/');
+ const pageStore=[...stores.entries()].find(([n])=>n.endsWith('-pages'))[1];assert(pageStore.size<=40);
+ const jobs=[];handlers.message({data:{type:'CACHE_PAGE',url:origin+'/cities/shanghai/',images:[]},waitUntil(p){jobs.push(p)}});await Promise.all(jobs);assert(pageStore.has(origin+'/cities/shanghai/'));
+ let accepted=false;handlers.message({data:{type:'CACHE_PAGE',url:'https://other.example/private'},waitUntil(){accepted=true}});assert(!accepted);
+ const llms=fs.readFileSync('dist/llms.txt','utf8');assert(llms.startsWith('# 城迹'));assert(llms.includes('/cities/beijing/index.md'));
+ assert(fs.readFileSync('dist/cities/beijing/places/0/index.md','utf8').includes('对应网页：https://chengji-travel.onrender.com/cities/beijing/places/0/'));
+ const imageAssets=JSON.parse(fs.readFileSync('dist/image-assets.json'));assert(Object.values(imageAssets).every(x=>x.card.preview.startsWith('data:image/webp;base64,')));
+ console.log('RESILIENCE_CHECKS_PASSED: image fallback, bounded offline pages, uncached-city honesty, API exclusion, current-page cache and AI references');
+})().catch(e=>{console.error(e);process.exitCode=1});

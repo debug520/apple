@@ -80,7 +80,11 @@ if ! python3 -c 'from PIL import Image' >/dev/null 2>&1; then
 fi
 python3 prepare_web_images.py
 python3 prepare_seo.py
+python3 prepare_ai_access.py
 python3 prepare_startup.py
+python3 prepare_offline.py
 node check_startup.cjs
 
 python3 check_delivery.py
+
+node check_resilience.cjs

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/*",
+    "name": "X-Frame-Options",
+    "value": "SAMEORIGIN"
+  },
+  {
+    "path": "/*",
+    "name": "Content-Security-Policy",
+    "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' https:; worker-src 'self' blob:; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self'; upgrade-insecure-requests"
+  },
+  {
+    "path": "/*",
+    "name": "Referrer-Policy",
+    "value": "strict-origin-when-cross-origin"
+  },
+  {
+    "path": "/*",
+    "name": "Permissions-Policy",
+    "value": "geolocation=(self), camera=(), microphone=()"
+  },
+  {
+    "path": "/sw.js",
+    "name": "Cache-Control",
+    "value": "no-cache, max-age=0, must-revalidate"
+  }
+]

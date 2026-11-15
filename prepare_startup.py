@@ -23,7 +23,7 @@ def asset(name, text):
 
 engine_names = ['vendor-map/ol.js', 'vendor-map/olms.js']
 engine = asset('map-engine.js', '\n;\n'.join(content(name) for name in engine_names))
-sections = ["'use strict';\nwindow.__CJ_BOOTING__=true;\nwindow.CHENGJI_MAP_ENGINE=" + json.dumps(engine) + ';', Path('map-loader.js').read_text(),content('image-assets.js'),Path('web-vitals.iife.js').read_text(),Path('vitals-monitor.js').read_text()]
+sections = ["'use strict';\nwindow.__CJ_BOOTING__=true;\nwindow.CHENGJI_MAP_ENGINE=" + json.dumps(engine) + ';', Path('map-loader.js').read_text(),content('image-assets.js'),Path('web-vitals.iife.js').read_text(),Path('vitals-monitor.js').read_text(),Path('progressive-photos.js').read_text(),Path('sw-client.js').read_text()]
 for path in scripts:
     if path in engine_names:
         continue
@@ -38,16 +38,16 @@ for path in scripts:
         code = re.sub(r'(\bfunction render\(\)\{|\brender\s*=\s*function\(\)\{)', r'\1if(window.__CJ_BOOTING__)return;', code)
     sections.append('// ' + name + '\n' + code)
 app = asset('city-startup.js', '\n;\n'.join(sections))
-css = asset('city-startup.css', '\n'.join(content(path) for path in styles))
+css = asset('city-startup.css', '\n'.join(content(path) for path in styles)+'\n'+Path('progressive-photos.css').read_text())
 html = re.sub(r'<script src="([^"]+)"[^>]*></script>', '', html)
 html = re.sub(r'<link rel="stylesheet" href="([^"]+)"[^>]*>', '', html)
 html = re.sub(r'<script>if\(!new URL\(location.href\).*?</script>', '', html, count=1)
 critical_names=['style.css','vendor-map/ol.css','explorer.css','photo-ui.css','city-journal.css']
-critical='\n'.join(content(name) for name in critical_names)+'\n'+Path('boot-shell.css').read_text()
+critical='\n'.join(content(name) for name in critical_names)+'\n'+Path('boot-shell.css').read_text()+'\n'+Path('progressive-photos.css').read_text()
 critical=re.sub(r'/\*.*?\*/','',critical,flags=re.S)
 critical=re.sub(r'\s+',' ',critical)
 html=re.sub(r'<meta\s+[^>]*name="description"[^>]*>','',html,flags=re.I)
-head='<style id="cj-critical">'+critical+'</style><link rel="preload" as="style" href="'+css+'" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="'+css+'"></noscript><script defer src="'+app+'"></script><link rel="canonical" href="https://chengji-travel.onrender.com/"><meta name="description" content="城迹提供28城的城市漫游、景点故事与美食文化攻略，可在地图中探索并安排行程。"><script type="application/ld+json">'+(out/'seo-home-schema.json').read_text()+'</script>'
+head='<style id="cj-critical">'+critical+'</style><link rel="preload" as="style" href="'+css+'" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="'+css+'"></noscript><script defer src="'+app+'"></script><link rel="canonical" href="https://chengji-travel.onrender.com/"><meta name="description" content="城迹提供28城的城市漫游、景点故事与美食文化攻略，可在地图中探索并安排行程。"><script type="application/ld+json">'+(out/'seo-home-schema.json').read_text()+'</script><link rel="describedby" href="/llms.txt"><link rel="alternate" type="text/markdown" href="/index.md">'
 html=html.replace('<html lang="zh-CN">','<html lang="zh-CN" class="cjBoot">')
 html=re.sub(r'<title>.*?</title>','<title>城迹｜中国城市漫游与美食地图</title>',html)
 html = html.replace('</head>',head+'</head>')

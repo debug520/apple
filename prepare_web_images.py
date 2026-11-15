@@ -1,6 +1,7 @@
 """Generate responsive WebP derivatives; retain every credited original unchanged."""
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+import base64,io
 import hashlib
 import json
 from PIL import Image, ImageOps
@@ -15,11 +16,13 @@ def prepare(file):
     variants={}
     with Image.open(out/file) as source:
         source=ImageOps.exif_transpose(source).convert('RGB')
+        tiny=source.copy();tiny.thumbnail((24,24),Image.Resampling.LANCZOS);buffer=io.BytesIO();tiny.save(buffer,'WEBP',quality=18,method=4)
+        preview='data:image/webp;base64,'+base64.b64encode(buffer.getvalue()).decode()
         for name,width in [('card',320),('detail',640)]:
             photo=source.copy();photo.thumbnail((width,width),Image.Resampling.LANCZOS)
             path=f'responsive-photos/{digest}-{width}.webp'
             if not (out/path).exists():photo.save(out/path,'WEBP',quality=74,method=4)
-            variants[name]={'src':path,'width':photo.width,'height':photo.height}
+            variants[name]={'src':path,'width':photo.width,'height':photo.height,'preview':preview}
     return file,variants,len(raw),sum((out/v['src']).stat().st_size for v in variants.values())
 with ThreadPoolExecutor(max_workers=4) as pool: prepared=list(pool.map(prepare,files))
 manifest={file:variants for file,variants,_,_ in prepared}

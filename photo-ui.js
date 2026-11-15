@@ -13,7 +13,7 @@
   const photo = gallery[current];
   viewer.querySelector('h2').textContent = photo.title + ' · ' + (current + 1) + ' / ' + gallery.length;
   const img = viewer.querySelector('.photo-viewer-image');
-  img.src = photo.file; img.alt = photo.title + '资料照片'; img.hidden = false;
+  const asset=window.ChengjiImage?.(photo.file,'detail');img.classList.add('cj-photo-loading');delete img.dataset.photoTriedOriginal;delete img.dataset.photoLowres;img.dataset.photoOriginal=photo.file;img.dataset.photoPreview=asset?.preview||'';img.style.setProperty('--cj-preview',`url('${asset?.preview||''}')`);img.parentElement.style.setProperty('--cj-preview',`url('${asset?.preview||''}')`);img.parentElement.style.setProperty('--cj-photo-ratio',`${asset?.width||640}/${asset?.height||480}`);img.src=asset?.src||photo.file; img.alt = photo.title + '资料照片'; img.hidden = false;
   viewer.querySelector('.photo-viewer-error').hidden = true;
   viewer.querySelector('[data-photo-prev]').disabled = current === 0;
   viewer.querySelector('[data-photo-next]').disabled = current === gallery.length - 1;
@@ -22,7 +22,7 @@
  function createViewer() {
   viewer = document.createElement('dialog'); viewer.className = 'photo-viewer';
   viewer.setAttribute('aria-labelledby', 'photo-viewer-title');
-  viewer.innerHTML = `<header><h2 id="photo-viewer-title"></h2><button data-photo-close aria-label="关闭照片预览" autofocus>${window.ChengjiIcons.svg('close')}</button></header><div class="photo-viewer-stage"><img class="photo-viewer-image"><p class="photo-viewer-error" hidden>照片暂时无法加载，请关闭后重试。</p></div><nav aria-label="切换照片"><button data-photo-prev>${window.ChengjiIcons.svg('chevron-left')} 上一张</button><span>资料照片 · 非当日实况</span><button data-photo-next>下一张 ${window.ChengjiIcons.svg('chevron-right')}</button></nav><div class="photo-viewer-source"></div>`;
+  viewer.innerHTML = `<header><h2 id="photo-viewer-title"></h2><button data-photo-close aria-label="关闭照片预览" autofocus>${window.ChengjiIcons.svg('close')}</button></header><div class="photo-viewer-stage"><span class="cj-photo-frame"><img class="photo-viewer-image"></span><p class="photo-viewer-error" hidden>原图可从下方资料来源打开。</p></div><nav aria-label="切换照片"><button data-photo-prev>${window.ChengjiIcons.svg('chevron-left')} 上一张</button><span>资料照片 · 非当日实况</span><button data-photo-next>下一张 ${window.ChengjiIcons.svg('chevron-right')}</button></nav><div class="photo-viewer-source"></div>`;
   viewer.addEventListener('click', e => {
    if (e.target === viewer || e.target.closest('[data-photo-close]')) viewer.close();
    else if (e.target.closest('[data-photo-prev]') && current > 0) { current--; showPhoto(); }
@@ -32,7 +32,6 @@
    if (e.key === 'ArrowLeft' && current > 0) { e.preventDefault(); current--; showPhoto(); }
    if (e.key === 'ArrowRight' && current < gallery.length - 1) { e.preventDefault(); current++; showPhoto(); }
   });
-  viewer.querySelector('img').addEventListener('error', e => { e.target.hidden = true; viewer.querySelector('.photo-viewer-error').hidden = false; });
   viewer.addEventListener('close', () => { if (opener?.isConnected) opener.focus(); });
   document.body.append(viewer);
  }
@@ -45,17 +44,4 @@
   if (!viewer) createViewer();
   showPhoto(); viewer.showModal();
  });
- function failed(img) {
-  if (!(img instanceof HTMLImageElement) || !img.closest('#app, #overlay, .me-root') || !img.parentNode) return;
-  const placeholder = document.createElement('span');
-  placeholder.className = img.className + ' photo-unavailable' + (img.closest('.me-root') ? ' me-image-placeholder' : '');
-  placeholder.setAttribute('role', 'img');
-  placeholder.setAttribute('aria-label', (img.alt || '资料照片') + '暂时无法加载');
-  const mark = document.createElement('b'); mark.innerHTML = window.ChengjiIcons.svg('image'); mark.setAttribute('aria-hidden', 'true');
-  const caption = document.createElement('small'); caption.textContent = '照片暂时无法加载';
-  placeholder.append(mark, caption);
-  img.replaceWith(placeholder);
- }
- document.addEventListener('error', event => failed(event.target), true);
- document.addEventListener('DOMContentLoaded', () => document.querySelectorAll('#app img, #overlay img, .me-root img').forEach(img => { if (img.complete && !img.naturalWidth) failed(img); }), {once: true});
 })();
