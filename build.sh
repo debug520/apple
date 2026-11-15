@@ -73,3 +73,6 @@ node check_explorer.cjs
 node check_photos.cjs
 
 node check_search.cjs
+
+python3 prepare_startup.py
+node check_startup.cjs
