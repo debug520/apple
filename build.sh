@@ -74,5 +74,13 @@ node check_photos.cjs
 
 node check_search.cjs
 
+node export_seo.cjs
+if ! python3 -c 'from PIL import Image' >/dev/null 2>&1; then
+  python3 -m pip install --quiet -r requirements-web-images.txt
+fi
+python3 prepare_web_images.py
+python3 prepare_seo.py
 python3 prepare_startup.py
 node check_startup.cjs
+
+python3 check_delivery.py
