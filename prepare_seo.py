@@ -67,8 +67,15 @@ for c in cities:
                 if isinstance(duration, (int, float)) and duration > 0:
                     text += f'<p>建议停留约 {duration:g} 分钟（编辑估算，不含交通与排队）。</p>'
                 text+='<h2 id="before-visit">出发前核对</h2><dl>'+''.join('<dt>'+label+'</dt><dd>'+E(str(value))+'</dd>' for label,value in [('开放时间',visit.get('hours')),('门票与费用',visit.get('ticket')),('预约提示',visit.get('reservation')),('交通与入口',visit.get('transport')),('开放状态',visit.get('availability'))] if value)+'</dl>'
-                dates=[visit.get('policyCheckedAt'),visit.get('priceCheckedAt')];dates=sorted(set(d for d in dates if d))
-                if dates:text+='<p class="note">资料核对日期：'+E('、'.join(dates))+'。这不是当日状态。</p>'
+                for label, date_key, source_key in [
+                    ('开放公告', 'availabilityCheckedAt', 'availabilitySource'),
+                    ('预约规则', 'policyCheckedAt', 'policySource'),
+                    ('票价', 'priceCheckedAt', 'priceSource')
+                ]:
+                    date, url = visit.get(date_key), visit.get(source_key)
+                    if date or safe(url):
+                        stamp = ' · 资料核对：' + E(date) if date else ''
+                        text += '<p class="note">' + link(url, label + '来源') + stamp + '</p>'
                 for label, key in [('地址与入口', 'address'), ('无障碍与同行提示', 'accessibility')]:
                     if visit.get(key):
                         text += '<p><strong>' + label + '</strong>　' + E(visit[key]) + '</p>'

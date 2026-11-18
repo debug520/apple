@@ -29,5 +29,26 @@
  function tripGeometry(stops){const lines=[];let km=0,missing=0;for(let i=1;i<stops.length;i++){const a=stops[i-1]?.position,b=stops[i]?.position;if(a&&b){km+=distance(a,b);lines.push({type:'Feature',geometry:{type:'LineString',coordinates:[a,b]},properties:{}})}else missing++;}return {geojson:{type:'FeatureCollection',features:lines},km,missing};}
  function moveTrip(list,day,index,delta){const order=list.map((s,i)=>({s,i})).filter(x=>x.s.day===day).map(x=>x.i),n=order.indexOf(index),other=order[n+delta];if(n<0||other===undefined)return list.slice();const next=list.slice();[next[index],next[other]]=[next[other],next[index]];return next;}
  function upsertBooking(list,intent,id){const existing=list.findIndex(p=>id?p.id===id:p.placeId===intent.placeId&&p.date===intent.date&&p.time===intent.time&&p.type===intent.type),next=list.slice(),item={...intent,id:existing>=0?(list[existing].id||id):id||'plan-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8)};if(!item.id)item.id='plan-'+Date.now().toString(36);if(existing>=0)next[existing]=item;else next.unshift(item);return next.slice(0,50);}
- const api={categories,category,coordinates,distance,flatten,searchRank,filter,features,osmRecords,tileRecords,safeExternal,booking,freeAdmission,savedView,startupTarget,tripGeometry,moveTrip,upsertBooking};root.MapExplorerModel=api;if(typeof module!=='undefined')module.exports=api;
+ function departureNotes(record, step={}){
+  if(record.type==='foods')return ['先选一家供应这道菜的门店'];
+  const visit=record.visit || {}, notes=[];
+  if(visit.availability)notes.push('核对开放公告');
+  if(record.type==='places' && !step.bookingChecked){
+   if(!safeExternal(visit.policySource) || !visitLabelsForTrip[visit.reservationStatus]){
+    notes.push('确认预约规则');
+   }else if(visit.reservationStatus!=='not-required'){
+    notes.push(visitLabelsForTrip[visit.reservationStatus]);
+   }
+  }
+  if(!record.position)notes.push('确认实际入口');
+  return notes;
+ }
+ const visitLabelsForTrip={required:'提前办理预约',conditional:'核对适用的预约条件','not-required':'免预约'};
+ function tripDistanceLabel(geometry){
+  const known=geometry.geojson.features.length;
+  if(!known)return geometry.missing?'相邻站距离待核实':'';
+  const total=known+geometry.missing;
+  return (geometry.missing?known+'/'+total+' 段有参考点，':'相邻参考点')+'直线合计 '+geometry.km.toFixed(1)+' km';
+ }
+ const api={categories,category,coordinates,distance,flatten,searchRank,filter,features,osmRecords,tileRecords,safeExternal,booking,freeAdmission,savedView,startupTarget,tripGeometry,departureNotes,tripDistanceLabel,moveTrip,upsertBooking};root.MapExplorerModel=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window==='undefined'?globalThis:window);

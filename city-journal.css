@@ -153,3 +153,23 @@ body.meMode .sheet p{color:#7d887e}.me-menu-grid button{background:#eff1e9;borde
 @media(max-width:360px){.me-top{left:9px;width:calc(100% - 18px);padding:11px}.me-brandlockup small{font-size:7px}.me-brandlockup{gap:6px}.me-brandline{gap:8px}.me-brandmark{width:32px;height:32px;flex-basis:32px}.me-brandlockup b{font-size:22px}.me-filters{gap:8px}.me-filters .me-icon{display:none}.me-filters button span{font-size:11px}.me-user{width:44px;height:44px;flex-basis:44px}.me-city{min-width:52px}.me-controls{right:10px}.me-search-area{left:10px}}
 :root{--muted:#536359;--cj-muted:#536359;--cj-accent:#984b2b}.me-list-head small,.me-inline-note,.me-detail-section dt,.me-rec-card small,.me-title-line button,.me-gallery figcaption{color:#536359}.me-gallery figcaption{background:#203e53d9;color:#fff}.me-list-caption button{color:#984b2b}.me-trip-stop-top small,.me-field,.me-note,.me-detail-content .source{color:#536359}
 .sheet button{min-width:44px;min-height:44px}@media(max-width:979px){.me-filters button span{font-size:12px}}
+
+.cj-trip-checks {
+  margin: 14px 0;
+  padding: 0 14px;
+  border: 1px solid #d7c8b7;
+  border-radius: 12px;
+  background: #faf5ec;
+}
+.cj-trip-checks summary { padding: 14px 0; color: #694027; font-weight: 650; cursor: pointer; }
+.cj-trip-checks button {
+  display: grid;
+  width: 100%;
+  gap: 4px;
+  padding: 12px 0;
+  border-top: 1px solid #e4daca;
+  text-align: left;
+}
+.cj-trip-checks button span, .cj-evidence small { color: #536359; font-size: 13px; }
+.cj-evidence div { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.cj-evidence a { display: inline-flex; align-items: center; min-height: 44px; color: #24485f; text-decoration: underline; }
