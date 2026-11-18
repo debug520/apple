@@ -3,6 +3,7 @@
 const VERSION='__CJ_VERSION__',PRECACHE=__CJ_PRECACHE__;
 const PREFIX='chengji-public-',CORE=PREFIX+VERSION+'-core',PAGES=PREFIX+VERSION+'-pages',IMAGES=PREFIX+VERSION+'-images';
 const origin=self.location.origin;
+const MAP_ASSETS=__CJ_MAP_ASSETS__;
 async function trim(cache,limit){const keys=await cache.keys();for(const key of keys.slice(0,Math.max(0,keys.length-limit)))await cache.delete(key);}
 function navigationKey(url){return ['/','/index.html','/travel.html','/travel/','/travel/index.html'].includes(url.pathname)?origin+'/index.html':origin+url.pathname;}
 function publicPage(path){return /^\/cities\/(?:[a-z0-9-]+\/(?:(?:places|foods)\/\d+\/)?)?$/.test(path)||['/','/index.html','/travel.html','/travel/','/travel/index.html'].includes(path);}
@@ -45,11 +46,27 @@ self.addEventListener('message',event=>{
  if(event.data?.type!=='CACHE_PAGE')return;
  let url;try{url=new URL(event.data.url);}catch{return}
  if(url.origin!==origin||!publicPage(url.pathname))return;
+ const reply=saved=>event.ports?.[0]?.postMessage({saved});
  event.waitUntil((async()=>{
-  const pages=await caches.open(PAGES),key=navigationKey(url);const r=await fetch(key,{credentials:'omit'});if(r.ok){await pages.put(key,r);await trim(pages,40);}
+  const pages=await caches.open(PAGES),key=navigationKey(url);
+  if(!await pages.match(key)){
+   const response=await fetch(key,{credentials:'omit'});
+   if(!response.ok){reply(false);return;}
+   await pages.put(key,response);
+   await trim(pages,40);
+  }
+  reply(true);
+  if(key===origin+'/index.html'){
+   const core=await caches.open(CORE);
+   await Promise.allSettled(MAP_ASSETS.map(async path=>{
+    if(await core.match(path))return;
+    const asset=await fetch(path);
+    if(asset.ok)await core.put(path,asset);
+   }));
+  }
   const images=await caches.open(IMAGES);for(const item of (event.data.images||[]).slice(0,12)){let picture;try{picture=new URL(item);}catch{continue}
    if(picture.origin!==origin||!/^\/responsive-photos\/[a-f0-9]{16}-(320|640)\.webp$/.test(picture.pathname))continue;
    const response=await fetch(picture.href,{credentials:'omit'});if(response.ok)await images.put(picture.href,response);
   }await trim(images,100);
- })().catch(()=>{}));
+ })().catch(()=>reply(false)));
 });

@@ -42,14 +42,14 @@ css = asset('city-startup.css', '\n'.join(content(path) for path in styles)+'\n'
 html = re.sub(r'<script src="([^"]+)"[^>]*></script>', '', html)
 html = re.sub(r'<link rel="stylesheet" href="([^"]+)"[^>]*>', '', html)
 html = re.sub(r'<script>if\(!new URL\(location.href\).*?</script>', '', html, count=1)
-critical_names=['style.css','vendor-map/ol.css','explorer.css','photo-ui.css','city-journal.css']
-critical='\n'.join(content(name) for name in critical_names)+'\n'+Path('boot-shell.css').read_text()+'\n'+Path('progressive-photos.css').read_text()
+critical=Path('boot-shell.css').read_text()
 critical=re.sub(r'/\*.*?\*/','',critical,flags=re.S)
 critical=re.sub(r'\s+',' ',critical)
 html=re.sub(r'<meta\s+[^>]*name="description"[^>]*>','',html,flags=re.I)
 head='<style id="cj-critical">'+critical+'</style><link rel="preload" as="style" href="'+css+'" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="'+css+'"></noscript><script defer src="'+app+'"></script><link rel="canonical" href="https://chengji-travel.onrender.com/"><meta name="description" content="城迹提供28城的城市漫游、景点故事与美食文化攻略，可在地图中探索并安排行程。"><script type="application/ld+json">'+(out/'seo-home-schema.json').read_text()+'</script><link rel="describedby" href="/llms.txt"><link rel="alternate" type="text/markdown" href="/index.md">'
 html=html.replace('<html lang="zh-CN">','<html lang="zh-CN" class="cjBoot">')
 html=re.sub(r'<title>.*?</title>','<title>城迹｜中国城市漫游与美食地图</title>',html)
+head += '<link rel="manifest" href="/manifest.webmanifest"><meta property="og:type" content="website"><meta property="og:site_name" content="城迹"><meta property="og:title" content="城迹｜中国城市漫游与美食地图"><meta property="og:url" content="https://chengji-travel.onrender.com/"><meta property="og:description" content="浏览城市去处与在地风味攻略，在地图中安排自己的漫游路线。">'
 html = html.replace('</head>',head+'</head>')
 html = html.replace('<main class="page" id="app"></main>', '<main class="page" id="app">'+(out/'seo-home.html').read_text()+'</main>')
 (out / 'index.html').write_text(html)

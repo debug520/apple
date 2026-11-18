@@ -19,7 +19,11 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
  assert.equal(await dispatch('/api/personal-notes'),null);assert.equal(await dispatch('https://api.open-meteo.com/v1/forecast'),null);assert.equal(await dispatch('/cities/beijing/',{method:'POST'}),null);
  offline=false;for(let n=0;n<45;n++)await dispatch('/cities/beijing/places/'+n+'/');
  const pageStore=[...stores.entries()].find(([n])=>n.endsWith('-pages'))[1];assert(pageStore.size<=40);
- const jobs=[];handlers.message({data:{type:'CACHE_PAGE',url:origin+'/cities/shanghai/',images:[]},waitUntil(p){jobs.push(p)}});await Promise.all(jobs);assert(pageStore.has(origin+'/cities/shanghai/'));
+ const jobs=[],replies=[];handlers.message({data:{type:'CACHE_PAGE',url:origin+'/cities/shanghai/',images:[]},ports:[{postMessage(result){replies.push(result.saved)}}],waitUntil(p){jobs.push(p)}});await Promise.all(jobs);assert(pageStore.has(origin+'/cities/shanghai/'));assert.deepEqual(replies,[true]);
+ assert(!requests.some(url=>url.endsWith('/city-startup.js')||url.endsWith('/map-engine.js')),'reading a guide must not download the interactive map');
+ offline=true;
+ handlers.message({data:{type:'CACHE_PAGE',url:origin+'/cities/unvisited/',images:[]},ports:[{postMessage(result){replies.push(result.saved)}}],waitUntil(p){jobs.push(p)}});
+ await Promise.all(jobs);assert.deepEqual(replies,[true,false]);
  let accepted=false;handlers.message({data:{type:'CACHE_PAGE',url:'https://other.example/private'},waitUntil(){accepted=true}});assert(!accepted);
  const llms=fs.readFileSync('dist/llms.txt','utf8');assert(llms.startsWith('# 城迹'));assert(llms.includes('/cities/beijing/index.md'));
  assert(fs.readFileSync('dist/cities/beijing/places/0/index.md','utf8').includes('对应网页：https://chengji-travel.onrender.com/cities/beijing/places/0/'));

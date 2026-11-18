@@ -16,15 +16,19 @@ class Page(HTMLParser):
     def handle_data(self,data):
         if self.active:self.jsonld.append(json.loads(data))
 urls=[x.text for x in ET.parse(out/'sitemap.xml').findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-assert len(urls)==len(set(urls))==1990
+assert len(urls)==len(set(urls))==1991
 assert 'Sitemap: https://chengji-travel.onrender.com/sitemap.xml' in (out/'robots.txt').read_text()
 for url in urls:
-    path=urlparse(url).path;file=out/'index.html' if path=='/' else out/path.lstrip('/')/'index.html'
+    path=urlparse(url).path
+    file=out/path.lstrip('/')
+    if path.endswith('/'):file=file/'index.html'
     text=file.read_text();p=Page();p.feed(text)
     assert '<h1>' in text and p.jsonld and 'lang="zh-CN"' in text,(path,'HTML content missing')
     assert any(t=='link' and a.get('rel')=='canonical' and a.get('href')==url for t,a in p.tags),(path,'canonical')
     assert 'noindex' not in text
-    if path!='/':
+    if path == '/destinations.html':
+        assert '/cities/shanghai/' in text and '/cities/beijing/' in text
+    if path.startswith('/cities/'):
         assert 'city-startup.js' not in text and 'map-engine.js' not in text
         assert len([1 for t,a in p.tags if t=='script' and 'src' in a])==1
         assert not any('aggregateRating' in json.dumps(x) or 'LocalBusiness' in json.dumps(x) for x in p.jsonld)
