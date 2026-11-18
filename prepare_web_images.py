@@ -27,6 +27,30 @@ def prepare(file):
 with ThreadPoolExecutor(max_workers=4) as pool: prepared=list(pool.map(prepare,files))
 manifest={file:variants for file,variants,_,_ in prepared}
 (out/'image-assets.json').write_text(json.dumps(manifest,ensure_ascii=False,separators=(',',':')))
-(out/'image-assets.js').write_text('window.CHENGJI_IMAGES='+json.dumps(manifest,ensure_ascii=False,separators=(',',':'))+';\nwindow.ChengjiImage=function(file,kind="card"){return window.CHENGJI_IMAGES[file]?.[kind]||{src:file,width:640,height:480}};\n')
+def browser_entry(file, variants):
+    card, detail = variants['card'], variants['detail']
+    stem = card['src'].removesuffix('-320.webp')
+    assert detail['src'] == stem + '-640.webp' and card['preview'] == detail['preview']
+    fields = [stem, card['width'], card['height'], detail['width'], detail['height'], card['preview']]
+    args = ','.join(json.dumps(value, ensure_ascii=False) for value in fields)
+    return f'{json.dumps(file, ensure_ascii=False)}:variants({args})'
+
+entries = ',\n'.join(browser_entry(file, variants) for file, variants in manifest.items())
+runtime = """(function () {
+  function variants(stem, cardWidth, cardHeight, detailWidth, detailHeight, preview) {
+    return {
+      card: {src: stem + '-320.webp', width: cardWidth, height: cardHeight, preview},
+      detail: {src: stem + '-640.webp', width: detailWidth, height: detailHeight, preview}
+    };
+  }
+  window.CHENGJI_IMAGES = {
+""" + entries + """
+  };
+  window.ChengjiImage = function (file, kind = 'card') {
+    return window.CHENGJI_IMAGES[file]?.[kind] || {src: file, width: 640, height: 480};
+  };
+})();
+"""
+(out/'image-assets.js').write_text(runtime)
 report={'uniqueImages':len(files),'variants':len(files)*2,'originalBytes':sum(x[2] for x in prepared),'webpBytesBothSizes':sum(x[3] for x in prepared),'cardBytes':sum((out/v['card']['src']).stat().st_size for v in manifest.values()),'originalsPreserved':True}
 (out/'image-optimization.json').write_text(json.dumps(report,indent=2));print('RESPONSIVE_IMAGES_READY',json.dumps(report))

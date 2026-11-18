@@ -70,7 +70,15 @@ for c in cities:
             if p.get('file') in images:entity['image']=origin+'/'+images[p['file']]['detail']['src']
             graph=[{'@type':'WebPage','name':title,'url':origin+ip,'inLanguage':'zh-CN','mainEntity':entity},crumb_json(ibc)]
             page(ip,title,description(p),text,graph)
-home='<div class="boot-guide"><section><p class="eyebrow">城市故事 · 在地风味</p><h1>城迹 · 中国城市漫游与美食地图</h1><p>在城市故事、景点与当地风味之间，找到下一站。</p><a class="cta" href="/cities/">选择城市，开始漫游</a><p role="status">正在打开城市地图…</p><p class="source">搜索与地点列表会先就绪；底图加载期间，也可以先阅读城市攻略。</p><div class="city-grid">'+city_cards()+'</div></section><div class="boot-map" aria-hidden="true"><span>城市地图正在准备<br>文字攻略已可浏览</span></div></div>'
+home = (
+    '<div class="boot-guide"><section><p class="eyebrow">城迹</p>'
+    '<h1>中国城市漫游与美食地图</h1>'
+    f'<p>从 {len(cities)} 座城市中选一站，查景点、找当地美食。</p>'
+    '<a class="cta" href="/cities/">浏览城市攻略</a>'
+    '<p class="boot-status" role="status">正在打开城市地图…</p>'
+    '<noscript><style>.boot-status{display:none}</style></noscript>'
+    '<div class="city-grid">' + city_cards() + '</div></section></div>'
+)
 (out/'seo-home.html').write_text(home)
 home_graph={'@context':'https://schema.org','@type':'WebSite','name':'城迹','url':origin+'/','inLanguage':'zh-CN','description':'中国城市漫游、景点故事与在地美食地图'}
 (out/'seo-home-schema.json').write_text(json.dumps(home_graph,ensure_ascii=False).replace('<','\\u003c'))
