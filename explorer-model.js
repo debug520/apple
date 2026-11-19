@@ -50,5 +50,10 @@
   const total=known+geometry.missing;
   return (geometry.missing?known+'/'+total+' 段有参考点，':'相邻参考点')+'直线合计 '+geometry.km.toFixed(1)+' km';
  }
- const api={categories,category,coordinates,distance,flatten,searchRank,filter,features,osmRecords,tileRecords,safeExternal,booking,freeAdmission,savedView,startupTarget,tripGeometry,departureNotes,tripDistanceLabel,moveTrip,upsertBooking};root.MapExplorerModel=api;if(typeof module!=='undefined')module.exports=api;
+ function microRoute(input){
+  const label=s=>typeof s==='string'&&s.trim().length>0&&s.length<=160;
+  if(input?.v!==1||!label(input.city)||!Array.isArray(input.stops)||!input.stops.length||input.stops.length>60||!input.stops.every(label))return null;
+  return {v:1,city:input.city,stops:input.stops.slice()};
+ }
+ const api={microRoute,categories,category,coordinates,distance,flatten,searchRank,filter,features,osmRecords,tileRecords,safeExternal,booking,freeAdmission,savedView,startupTarget,tripGeometry,departureNotes,tripDistanceLabel,moveTrip,upsertBooking};root.MapExplorerModel=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window==='undefined'?globalThis:window);

@@ -16,7 +16,8 @@ class Page(HTMLParser):
     def handle_data(self,data):
         if self.active:self.jsonld.append(json.loads(data))
 urls=[x.text for x in ET.parse(out/'sitemap.xml').findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-assert len(urls)==len(set(urls))==1991
+topics=[url for url in urls if urlparse(url).path.startswith('/topics/')]
+assert topics and len(urls)==len(set(urls))==1991+len(topics)
 assert 'Sitemap: https://chengji-travel.onrender.com/sitemap.xml' in (out/'robots.txt').read_text()
 for url in urls:
     path=urlparse(url).path
@@ -26,6 +27,9 @@ for url in urls:
     assert '<h1>' in text and p.jsonld and 'lang="zh-CN"' in text,(path,'HTML content missing')
     assert any(t=='link' and a.get('rel')=='canonical' and a.get('href')==url for t,a in p.tags),(path,'canonical')
     assert 'noindex' not in text
+    if url in topics:
+        entries=p.jsonld[0]['@graph'][0]['mainEntity']['itemListElement']
+        assert entries and all(item['url'] in urls for item in entries)
     if path == '/destinations.html':
         assert '/cities/shanghai/' in text and '/cities/beijing/' in text
     if path.startswith('/cities/'):

@@ -10,7 +10,7 @@ root=['# 城迹','', '> 中国城市漫游、景点故事与在地美食资料�
 count=0
 for c in cities:
     cp=f"/cities/{c['id']}/";lines=[f"# {c['name']}城市漫游与美食地图",'',f"对应网页：{origin}{cp}",'',c.get('summary') or c.get('tagline',''),'']
-    root.append(f"- [{c['name']}城市漫游]({origin}{cp}index.md): 景点故事、美食文化、来源及地图入口")
+    root.append(f"- [{c['name']}城市漫游]({origin}{cp}): {c.get('tagline') or '景点故事与当地风味'}。[Markdown]({origin}{cp}index.md)")
     for kind,label in [('places','城市去处'),('foods','在地风味')]:
         lines+=['## '+label,'']
         for i,p in enumerate(c[kind]):

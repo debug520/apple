@@ -19,6 +19,7 @@
 .boot-guide .cta, .boot-guide .city-link { text-decoration: none; border-radius: 12px; }
 .boot-guide .cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; color: white; background: #24485f; }
 .boot-guide .boot-status { color: #536359; font-size: 14px; }
+.boot-retry { min-height: 44px; padding: 8px 16px; margin-bottom: 16px; color: #24485f; background: white; border: 1px solid #627577; border-radius: 8px; cursor: pointer; }
 .boot-directory { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #24485f; }
 .boot-guide .city-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 10px; }
 .boot-guide .city-link { display: grid; align-content: start; gap: 4px; padding: 14px; border: 1px solid #d9ded7; background: white; color: #284b62; }

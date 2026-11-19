@@ -70,6 +70,7 @@ node --check dist/city-icons.js
 node --check dist/photo-ui.js
 node --check dist/verified-photos.js
 node check_explorer.cjs
+node check_micro_route.cjs
 node check_photos.cjs
 
 node check_search.cjs
