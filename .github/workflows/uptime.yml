@@ -1,0 +1,42 @@
+name: Website uptime
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/uptime.yml']
+
+permissions: {}
+jobs:
+  homepage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Check homepage, guide and current startup script
+        shell: python
+        run: |
+          import re
+          import time
+          from urllib.request import urlopen
+
+          base = "https://chengji-travel.onrender.com/"
+          def check(path):
+              start = time.monotonic()
+              try:
+                  with urlopen(base + path, timeout=90) as response:
+                      body = response.read()
+                      print(f"/{path} HTTP {response.status}, {len(body)} bytes", flush=True)
+                      assert response.status == 200 and body.strip(), path
+                      return body, response.headers.get_content_type()
+              finally:
+                  print(f"/{path} elapsed {time.monotonic() - start:.3f}s", flush=True)
+
+          home, _ = check("")
+          assert "城迹" in home.decode(), "Missing homepage brand"
+          guide, _ = check("cities/")
+          assert "城迹" in guide.decode() and b'class="city-link"' in guide, "Missing city guides"
+          script = re.search(r'<script\b[^>]*\bsrc="/?(release-assets/[a-f0-9]+/city-startup\.js)"', home.decode())
+          assert script, "Missing startup script reference"
+          _, mime = check(script[1])
+          assert "javascript" in mime, mime
